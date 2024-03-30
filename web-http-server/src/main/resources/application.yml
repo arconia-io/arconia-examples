@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: web-http-server
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  tracing:
+    sampling:
+      probability: 1.0

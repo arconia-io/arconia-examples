@@ -1,0 +1,4 @@
+rootProject.name = 'arconia-samples'
+
+include 'tenant-source-properties'
+include 'web-http-server'

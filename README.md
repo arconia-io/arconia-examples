@@ -12,8 +12,9 @@ and AI/Large Language Models.
 
 ## 🤖 AI
 
-- [Tools](arconia-ai/tools/README.md)
-- [Tools with Model Context Protocol](arconia-ai/mcp-tools/README.md)
+- [Tools with Ollama](arconia-ai/tools-ollama/README.md)
+- [Tools with OpenAI](arconia-ai/tools-openai/README.md)
+- [Tools with Model Context Protocol and Ollama](arconia-ai/mcp-tools-ollama/README.md)
 
 ## 🏢 Multitenancy
 

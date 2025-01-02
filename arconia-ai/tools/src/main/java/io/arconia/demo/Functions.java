@@ -1,5 +1,8 @@
 package io.arconia.demo;
 
+import io.arconia.demo.domain.Author;
+import io.arconia.demo.domain.Book;
+import io.arconia.demo.domain.BookService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Description;
@@ -12,7 +15,7 @@ class Functions {
 
     @Bean
     @Description("Get the list of books written by the given author available in the library")
-    Function<BookService.Author, List<BookService.Book>> booksByAuthor(BookService bookService) {
+    Function<Author, List<Book>> booksByAuthor(BookService bookService) {
         return bookService::getBooksByAuthor;
     }
 

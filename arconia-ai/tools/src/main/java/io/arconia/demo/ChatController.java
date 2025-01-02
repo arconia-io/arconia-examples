@@ -19,10 +19,39 @@ class ChatController {
         this.tools = tools;
     }
 
-    @GetMapping("/chat/method/void")
-    String chatMethodVoid() {
+    @GetMapping("/chat/function")
+    String chat(String authorName) {
+        var userPromptTemplate = "What books written by {author} are available in the library?";
+        return chatClient.prompt()
+                .user(userSpec -> userSpec
+                        .text(userPromptTemplate)
+                        .param("author", authorName)
+                )
+                .functions("booksByAuthor")
+                .call()
+                .content();
+    }
+
+    @GetMapping("/chat/method/no-args")
+    String chatMethodNoArgs() {
         return chatClient.prompt()
                 .user("Welcome the user to the library")
+                .functions(MethodToolCallbackResolver.builder()
+                        .target(tools)
+                        .build()
+                        .getToolCallbacks())
+                .call()
+                .content();
+    }
+
+    @GetMapping("/chat/method/void")
+    String chatMethodVoid(String user) {
+        var userPromptTemplate = "Welcome {user} to the library";
+        return chatClient.prompt()
+                .user(userSpec -> userSpec
+                        .text(userPromptTemplate)
+                        .param("user", user)
+                )
                 .functions(MethodToolCallbackResolver.builder()
                         .target(tools)
                         .build()
@@ -48,13 +77,13 @@ class ChatController {
     }
 
     @GetMapping("/chat/method/list")
-    String chatMethodList(String authorName1, String authorName2) {
-        var userPromptTemplate = "What books written by {authorName1} and {authorName2} are available in the library?";
+    String chatMethodList(String bookTitle1, String bookTitle2) {
+        var userPromptTemplate = "What authors wrote the books {bookTitle1} and {bookTitle2} available in the library?";
         return chatClient.prompt()
                 .user(userSpec -> userSpec
                         .text(userPromptTemplate)
-                        .param("authorName1", authorName1)
-                        .param("authorName2", authorName2)
+                        .param("bookTitle1", bookTitle1)
+                        .param("bookTitle2", bookTitle2)
                 )
                 .functions(MethodToolCallbackResolver.builder()
                         .target(tools)

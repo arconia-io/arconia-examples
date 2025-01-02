@@ -30,10 +30,20 @@ run the application as follows.
 > [!NOTE]
 > These examples use the [httpie](https://httpie.io) CLI to send HTTP requests.
 
+Call the application that will use a tool defined as a `Function` bean to retrieve the context to answer your question.
+
+```shell
+http :8080/chat/function authorName=="J.R.R. Tolkien" -b
+```
+
 Call the application that will use a `@Tool`-annotated method to retrieve the context to answer your question.
 
 ```shell
-http :8080/chat/method/void -b
+http :8080/chat/method/no-args -b
+```
+
+```shell
+http :8080/chat/method/void user=="Jessica" -b
 ```
 
 ```shell
@@ -41,5 +51,9 @@ http :8080/chat/method/single authorName=="J.R.R. Tolkien" -b
 ```
 
 ```shell
-http :8080/chat/method/list authorName1=="J.R.R. Tolkien" authorName2=="Philip Pullman" -b
+http :8080/chat/method/single authorName=="C.S. Lewis" -b
+```
+
+```shell
+http :8080/chat/method/list bookTitle1=="Narnia" bookTitle2=="The Hobbit" -b
 ```

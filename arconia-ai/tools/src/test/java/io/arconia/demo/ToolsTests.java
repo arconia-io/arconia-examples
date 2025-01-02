@@ -1,6 +1,7 @@
 package io.arconia.demo;
 
 import io.arconia.ai.core.tools.method.MethodToolCallbackResolver;
+import io.arconia.demo.domain.BookService;
 import org.junit.jupiter.api.Test;
 
 import java.util.stream.Stream;

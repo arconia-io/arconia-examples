@@ -1,4 +1,4 @@
-package io.arconia.demo;
+package io.arconia.demo.domain;
 
 import org.springframework.stereotype.Service;
 
@@ -25,14 +25,12 @@ public class BookService {
                 .toList();
     }
 
-    public List<Book> getBooksByAuthor(List<Author> authors) {
+    public List<Author> getAuthorsByBook(List<Book> booksToSearch) {
         return books.values().stream()
-                .filter(book -> authors.stream()
-                        .anyMatch(author -> author.name().equals(book.author())))
+                .filter(book -> booksToSearch.stream()
+                        .anyMatch(b -> b.title().equals(book.title())))
+                .map(book -> new Author(book.author()))
                 .toList();
     }
-
-    public record Book(String title, String author) {}
-    public record Author(String name) {}
 
 }

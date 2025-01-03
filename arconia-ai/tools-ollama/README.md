@@ -63,5 +63,5 @@ http :8080/chat/method/callback bookTitle1=="Narnia" bookTitle2=="The Hobbit" -b
 ```
 
 ```shell
-http :8080/chat/method/resolver bookTitle1=="Narnia" bookTitle2=="The Hobbit" -b
+http :8080/chat/method/provider bookTitle1=="Narnia" bookTitle2=="The Hobbit" -b
 ```

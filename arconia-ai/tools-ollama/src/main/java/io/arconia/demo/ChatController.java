@@ -1,7 +1,8 @@
 package io.arconia.demo;
 
 import io.arconia.ai.core.client.ArconiaChatClient;
-import io.arconia.ai.core.tools.method.MethodToolCallbackResolver;
+import io.arconia.ai.core.tools.ToolCallbacks;
+import io.arconia.ai.core.tools.method.MethodToolCallbackProvider;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -91,15 +92,12 @@ class ChatController {
                         .param("bookTitle1", bookTitle1)
                         .param("bookTitle2", bookTitle2)
                 )
-                .functions(MethodToolCallbackResolver.builder()
-                        .object(myTools)
-                        .build()
-                        .getToolCallbacks())
+                .functions(ToolCallbacks.from(myTools))
                 .call()
                 .content();
     }
 
-    @GetMapping("/chat/method/resolver")
+    @GetMapping("/chat/method/provider")
     String chatMethodResolver(String bookTitle1, String bookTitle2) {
         var userPromptTemplate = "What authors wrote the books {bookTitle1} and {bookTitle2} available in the library?";
         return chatClient.prompt()
@@ -108,8 +106,8 @@ class ChatController {
                         .param("bookTitle1", bookTitle1)
                         .param("bookTitle2", bookTitle2)
                 )
-                .toolCallbackResolvers(MethodToolCallbackResolver.builder()
-                        .object(myTools)
+                .toolCallbackProviders(MethodToolCallbackProvider.builder()
+                        .sources(myTools)
                         .build())
                 .call()
                 .content();

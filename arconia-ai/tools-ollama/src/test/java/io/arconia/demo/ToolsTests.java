@@ -1,6 +1,6 @@
 package io.arconia.demo;
 
-import io.arconia.ai.core.tools.method.MethodToolCallbackResolver;
+import io.arconia.ai.core.tools.ToolCallbacks;
 import io.arconia.demo.domain.BookService;
 import org.junit.jupiter.api.Test;
 
@@ -28,10 +28,7 @@ class ToolsTests {
     void nonStaticMethod() {
         var object = new Tools(new BookService());
 
-        var functionCallbacks = MethodToolCallbackResolver.builder()
-                .object(object)
-                .build()
-                .getToolCallbacks();
+        var functionCallbacks = ToolCallbacks.from(object);
 
         var booksByAuthor = Stream.of(functionCallbacks)
                 .filter(func -> func.getName().equals("booksByAuthor"))
@@ -60,10 +57,7 @@ class ToolsTests {
     void noArgsNoReturnMethod() {
         var object = new Tools(new BookService());
 
-        var functionCallbacks = MethodToolCallbackResolver.builder()
-                .object(object)
-                .build()
-                .getToolCallbacks();
+        var functionCallbacks = ToolCallbacks.from(object);
 
         var welcome = Stream.of(functionCallbacks)
                 .filter(func -> func.getName().equals("welcome"))

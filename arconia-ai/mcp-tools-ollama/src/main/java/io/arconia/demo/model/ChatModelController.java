@@ -1,6 +1,6 @@
 package io.arconia.demo.model;
 
-import io.arconia.ai.mcp.tools.McpToolCallbackResolver;
+import io.arconia.ai.mcp.tools.McpToolCallbacks;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.prompt.Prompt;
 import org.springframework.ai.mcp.client.McpSyncClient;
@@ -27,10 +27,7 @@ class ChatModelController {
     @GetMapping("/chat/mcp")
     String chatMcp(String question) {
         var prompt = new Prompt(question, FunctionCallingOptions.builder()
-                .functionCallbacks(McpToolCallbackResolver.builder()
-                        .mcpClients(mcpClient)
-                        .build()
-                        .getToolCallbacks())
+                .functionCallbacks(McpToolCallbacks.from(mcpClient))
                 .build());
 
         var chatResponse = chatModel.call(prompt);

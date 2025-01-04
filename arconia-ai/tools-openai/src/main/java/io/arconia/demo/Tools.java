@@ -1,6 +1,6 @@
 package io.arconia.demo;
 
-import io.arconia.ai.core.tools.Tool;
+import io.arconia.ai.core.tools.annotation.Tool;
 import io.arconia.demo.domain.Author;
 import io.arconia.demo.domain.Book;
 import io.arconia.demo.domain.BookService;

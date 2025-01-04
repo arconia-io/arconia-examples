@@ -34,6 +34,20 @@ class ChatController {
                 .content();
     }
 
+    @GetMapping("/chat/function/list")
+    String chatFunctionList(String bookTitle1, String bookTitle2) {
+        var userPromptTemplate = "What authors wrote the books {bookTitle1} and {bookTitle2} available in the library?";
+        return chatClient.prompt()
+                .user(userSpec -> userSpec
+                        .text(userPromptTemplate)
+                        .param("bookTitle1", bookTitle1)
+                        .param("bookTitle2", bookTitle2)
+                )
+                .tools("authorsByBooks")
+                .call()
+                .content();
+    }
+
     @GetMapping("/chat/method/no-args")
     String chatMethodNoArgs() {
         return chatClient.prompt()
@@ -92,7 +106,7 @@ class ChatController {
                         .param("bookTitle1", bookTitle1)
                         .param("bookTitle2", bookTitle2)
                 )
-                .functions(ToolCallbacks.from(myTools))
+                .toolCallbacks(ToolCallbacks.from(myTools))
                 .call()
                 .content();
     }

@@ -36,6 +36,10 @@ Call the application that will use a tool defined as a `Function` bean to retrie
 http :8080/chat/function authorName=="J.R.R. Tolkien" -b
 ```
 
+```shell
+http :8080/chat/function/list bookTitle1=="Narnia" bookTitle2=="The Hobbit" -b
+```
+
 Call the application that will use a `@Tool`-annotated method to retrieve the context to answer your question.
 
 ```shell

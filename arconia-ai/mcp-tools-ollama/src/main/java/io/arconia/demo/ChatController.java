@@ -1,11 +1,15 @@
 package io.arconia.demo;
 
 import io.arconia.ai.core.client.ArconiaChatClient;
+import io.arconia.ai.core.tools.ToolCallback;
 import io.arconia.ai.mcp.tools.McpToolCallbacks;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.mcp.client.McpSyncClient;
+import org.springframework.ai.model.function.FunctionCallback;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Arrays;
 
 /**
  * Chat examples using the high-level ChatClient API.

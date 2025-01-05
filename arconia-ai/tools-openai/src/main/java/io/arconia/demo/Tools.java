@@ -22,29 +22,23 @@ public class Tools {
     }
 
     @Tool("Welcome users to the library")
-    public void welcome() {
+    void welcome() {
         logger.info("Welcoming users to the library");
     }
 
     @Tool("Welcome a specific user to the library")
-    public void welcomeUser(String user) {
+    void welcomeUser(String user) {
         logger.info("Welcoming {} to the library", user);
     }
 
     @Tool("Get the list of books written by the given author available in the library")
-    public List<Book> booksByAuthor(Author author) {
+    List<Book> booksByAuthor(Author author) {
         logger.info("Getting books by author: {}", author);
         return bookService.getBooksByAuthor(author);
     }
 
-//    @Tool("Get the list of books written by the given author available in the library")
-//    public List<Book> booksByAuthor(String author) {
-//        logger.info("Getting books by author: {}", author);
-//        return bookService.getBooksByAuthor(new Author(author));
-//    }
-
     @Tool("Get the list of authors who wrote the given books available in the library")
-    public List<Author> authorsByBooks(List<String> books) {
+    List<Author> authorsByBooks(List<String> books) {
         logger.info("Getting authors by books: {}", String.join(", ", books));
         return bookService.getAuthorsByBook(books.stream().map(b -> new Book(b, "")).toList());
     }

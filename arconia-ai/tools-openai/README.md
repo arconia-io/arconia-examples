@@ -64,3 +64,7 @@ http :8080/chat/method/single authorName=="C.S. Lewis" -b
 ```shell
 http :8080/chat/method/list bookTitle1=="Narnia" bookTitle2=="The Hobbit" -b
 ```
+
+```shell
+http :8080/chat/method/callback bookTitle1=="Narnia" bookTitle2=="The Hobbit" -b
+```

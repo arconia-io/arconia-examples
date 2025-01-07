@@ -1,6 +1,6 @@
 package io.arconia.demo;
 
-import io.arconia.ai.core.tools.ToolCallbacks;
+import io.arconia.ai.tools.ToolCallbacks;
 import io.arconia.demo.domain.BookService;
 import org.junit.jupiter.api.Test;
 

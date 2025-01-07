@@ -1,6 +1,6 @@
 package io.arconia.demo.model;
 
-import io.arconia.ai.core.tools.ToolCallbacks;
+import io.arconia.ai.tools.ToolCallbacks;
 import io.arconia.demo.Tools;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.prompt.PromptTemplate;

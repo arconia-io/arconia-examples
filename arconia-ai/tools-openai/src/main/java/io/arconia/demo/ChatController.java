@@ -1,7 +1,7 @@
 package io.arconia.demo;
 
-import io.arconia.ai.core.client.ArconiaChatClient;
-import io.arconia.ai.core.tools.ToolCallbacks;
+import io.arconia.ai.client.ArconiaChatClient;
+import io.arconia.ai.tools.ToolCallbacks;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

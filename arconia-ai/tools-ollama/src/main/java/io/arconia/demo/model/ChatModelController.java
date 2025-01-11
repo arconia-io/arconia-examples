@@ -1,10 +1,10 @@
 package io.arconia.demo.model;
 
 import io.arconia.ai.tools.ToolCallbacks;
+import io.arconia.ai.tools.chat.ToolCallingChatOptions;
 import io.arconia.demo.Tools;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.prompt.PromptTemplate;
-import org.springframework.ai.model.function.FunctionCallingOptions;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,8 +32,8 @@ class ChatModelController {
                 What books written by {author} are available in the library?
                 """);
         Map<String,Object> model = Map.of("author", authorName);
-        var prompt = userPromptTemplate.create(model, FunctionCallingOptions.builder()
-                .functionCallbacks(ToolCallbacks.from(myTools))
+        var prompt = userPromptTemplate.create(model, ToolCallingChatOptions.builder()
+                .toolCallbacks(ToolCallbacks.from(myTools))
                 .build());
 
         var chatResponse = chatModel.call(prompt);

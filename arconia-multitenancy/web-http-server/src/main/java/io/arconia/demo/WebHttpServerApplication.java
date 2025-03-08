@@ -18,7 +18,7 @@ public class WebHttpServerApplication {
 	@Bean
 	RouterFunction<ServerResponse> routerFunctions() {
 		return RouterFunctions.route()
-				.GET("/tenant", request -> ServerResponse.ok()
+				.GET("/tenant", _ -> ServerResponse.ok()
 						.body(TenantContextHolder.getRequiredTenantIdentifier()))
 				.build();
 	}

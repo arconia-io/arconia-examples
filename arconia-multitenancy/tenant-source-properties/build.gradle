@@ -1,8 +1,8 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.4.1'
+	id 'org.springframework.boot' version '3.4.3'
 	id 'io.spring.dependency-management' version '1.1.7'
-	id 'org.graalvm.buildtools.native' version '0.10.4'
+	id 'org.graalvm.buildtools.native' version '0.10.5'
 }
 
 group = 'io.arconia'
@@ -20,11 +20,18 @@ repositories {
 }
 
 dependencies {
-	implementation "io.arconia:arconia-multitenancy-web-spring-boot-starter:${arconiaVersion}"
+	implementation "io.arconia:arconia-multitenancy-web-spring-boot-starter"
 
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "io.arconia:arconia-bom:0.5.0-SNAPSHOT"
+	}
 }
 
 tasks.named('test') {
@@ -33,4 +40,10 @@ tasks.named('test') {
 
 tasks.named('bootBuildImage') {
 	builder = "paketobuildpacks/builder-noble-java-tiny"
+}
+
+springBoot {
+	buildInfo {
+		excludes = ['time']
+	}
 }

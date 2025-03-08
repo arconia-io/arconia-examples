@@ -1,9 +1,14 @@
 spring:
   application:
-    name: web-http-server
+    name: observability-signals
 
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+
+arconia:
+  otel:
+    metrics:
+      interval: 5s

@@ -1,8 +1,0 @@
-rootProject.name = 'arconia-examples'
-
-include 'arconia-ai:mcp-tools-ollama'
-include 'arconia-ai:tools-ollama'
-include 'arconia-ai:tools-openai'
-
-include 'arconia-multitenancy:tenant-source-properties'
-include 'arconia-multitenancy:web-http-server'

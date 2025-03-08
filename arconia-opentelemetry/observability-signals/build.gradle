@@ -20,10 +20,11 @@ repositories {
 }
 
 dependencies {
-	implementation "io.arconia:arconia-multitenancy-web-spring-boot-starter"
+	implementation 'io.arconia:arconia-opentelemetry-spring-boot-starter'
 
-	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	testAndDevelopmentOnly 'io.arconia:arconia-dev-service-opentelemetry-lgtm'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'

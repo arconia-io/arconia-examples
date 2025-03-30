@@ -25,13 +25,15 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 
+	testAndDevelopmentOnly 'io.arconia:arconia-dev-tools'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 dependencyManagement {
 	imports {
-		mavenBom "io.arconia:arconia-bom:0.7.0"
+		mavenBom "io.arconia:arconia-bom:0.8.0"
 	}
 }
 

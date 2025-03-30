@@ -1,7 +1,10 @@
 version: 2
 updates:
   - package-ecosystem: gradle
-    directory: "/"
+    directories:
+      - "/arconia-multitenancy/tenant-source-properties"
+      - "/arconia-multitenancy/web-http-server"
+      - "/arconia-opentelemetry/observability-signals"
     schedule:
       interval: daily
       time: "23:00"

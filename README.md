@@ -5,7 +5,7 @@ A collection of examples and sample applications showcasing the features of
 
 ## 🛠️&nbsp; Pre-Requisites
 
-* Java 23
+* Java 24
 * Podman/Docker
 
 ## 🏢&nbsp; Multitenancy

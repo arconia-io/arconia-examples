@@ -10,7 +10,7 @@ version = '0.0.1-SNAPSHOT'
 
 java {
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(23)
+		languageVersion = JavaLanguageVersion.of(24)
 	}
 }
 
@@ -33,7 +33,7 @@ dependencies {
 
 dependencyManagement {
 	imports {
-		mavenBom "io.arconia:arconia-bom:0.10.0"
+		mavenBom "io.arconia:arconia-bom:0.10.1"
 	}
 }
 

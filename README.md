@@ -8,6 +8,11 @@ A collection of examples and sample applications showcasing the features of
 * Java 24
 * Podman/Docker
 
+## 🚀&nbsp; Dev Services
+
+- [Spring Data JPA PostgreSQL](arconia-dev-services/spring-data-jpa-postgresql)
+- [Spring Data Redis](arconia-dev-services/spring-data-redis)
+
 ## 🏢&nbsp; Multitenancy
 
 - [Tenant Source Properties](arconia-multitenancy/tenant-source-properties)

@@ -20,8 +20,11 @@ jobs:
       fail-fast: false
       matrix:
         project: [
+          arconia-dev-services/spring-data-jpa-postgresql,
+          arconia-dev-services/spring-data-redis,
           arconia-multitenancy/tenant-source-properties,
           arconia-multitenancy/web-http-server,
+          arconia-opentelemetry/observability-signals
         ]
     steps:
       - name: Check out source code

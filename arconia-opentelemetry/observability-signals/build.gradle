@@ -26,7 +26,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	testAndDevelopmentOnly 'io.arconia:arconia-dev-services-opentelemetry-lgtm'
+	testAndDevelopmentOnly 'io.arconia:arconia-dev-services-lgtm'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
@@ -34,7 +34,7 @@ dependencies {
 
 dependencyManagement {
 	imports {
-		mavenBom "io.arconia:arconia-bom:0.10.3"
+		mavenBom "io.arconia:arconia-bom:0.11.0"
 	}
 }
 

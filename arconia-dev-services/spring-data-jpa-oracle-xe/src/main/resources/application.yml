@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: spring-data-jpa-oracle-xe
+  jpa:
+    hibernate:
+      ddl-auto: update
+arconia:
+  dev:
+    services:
+      oracle-xe:
+        startup-timeout: 120s

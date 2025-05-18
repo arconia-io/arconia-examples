@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: spring-data-jpa-mariadb
+  jpa:
+    hibernate:
+      ddl-auto: update

@@ -20,7 +20,12 @@ jobs:
       fail-fast: false
       matrix:
         project: [
+          arconia-dev-services/spring-data-jpa-mariadb,
+          arconia-dev-services/spring-data-jpa-mysql,
+          arconia-dev-services/spring-data-jpa-oracle,
+          arconia-dev-services/spring-data-jpa-oracle-xe,
           arconia-dev-services/spring-data-jpa-postgresql,
+          arconia-dev-services/spring-rabbitmq,
           arconia-dev-services/spring-data-redis,
           arconia-multitenancy/tenant-source-properties,
           arconia-multitenancy/web-http-server,

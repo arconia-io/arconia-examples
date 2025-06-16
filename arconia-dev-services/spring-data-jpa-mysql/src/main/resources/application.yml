@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: spring-data-jpa-mysql
+  jpa:
+    hibernate:
+      ddl-auto: update
+arconia:
+  dev:
+    services:
+      mysql:
+        image-name: mysql:8.4

@@ -2,6 +2,13 @@ version: 2
 updates:
   - package-ecosystem: gradle
     directories:
+      - "/arconia-dev-services/spring-data-jpa-mariadb"
+      - "/arconia-dev-services/spring-data-jpa-mysql"
+      - "/arconia-dev-services/spring-data-jpa-oracle"
+      - "/arconia-dev-services/spring-data-jpa-oracle-xe"
+      - "/arconia-dev-services/spring-data-jpa-postgresql"
+      - "/arconia-dev-services/spring-data-redis"
+      - "/arconia-dev-services/spring-rabbitmq"
       - "/arconia-multitenancy/tenant-source-properties"
       - "/arconia-multitenancy/web-http-server"
       - "/arconia-opentelemetry/observability-signals"

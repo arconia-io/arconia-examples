@@ -1,6 +1,6 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.4.7'
+	id 'org.springframework.boot' version '3.5.3'
 	id 'io.spring.dependency-management' version '1.1.7'
 }
 
@@ -18,11 +18,12 @@ repositories {
 }
 
 dependencies {
+	implementation "io.arconia:arconia-spring-boot-starter"
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	testAndDevelopmentOnly 'io.arconia:arconia-dev-services-redis'
+    testAndDevelopmentOnly 'io.arconia:arconia-dev-services-redis'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
@@ -30,7 +31,7 @@ dependencies {
 
 dependencyManagement {
 	imports {
-		mavenBom "io.arconia:arconia-bom:0.12.0"
+		mavenBom "io.arconia:arconia-bom:0.13.0"
 	}
 }
 

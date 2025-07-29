@@ -11,13 +11,10 @@ management:
 arconia:
   otel:
     metrics:
-      interval: 5s
+      exporter:
+        interval: 5s
     resource:
       contributors:
-        container:
-          enabled: true
-        host-id:
-          enabled: true
         host:
           enabled: true
         java:

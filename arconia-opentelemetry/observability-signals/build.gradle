@@ -21,8 +21,6 @@ repositories {
 dependencies {
 	implementation 'io.arconia:arconia-opentelemetry-spring-boot-starter'
 
-	implementation 'io.opentelemetry:opentelemetry-api'
-
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
@@ -34,7 +32,7 @@ dependencies {
 
 dependencyManagement {
 	imports {
-		mavenBom "io.arconia:arconia-bom:0.13.0"
+		mavenBom "io.arconia:arconia-bom:0.14.1"
 	}
 }
 

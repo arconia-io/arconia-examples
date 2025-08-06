@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: web-http-server
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+      show-components: always

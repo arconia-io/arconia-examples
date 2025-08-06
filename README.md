@@ -18,6 +18,10 @@ A collection of examples and sample applications showcasing the features of
 - [Spring Data Redis](arconia-dev-services/spring-data-redis)
 - [Spring RabbitMQ](arconia-dev-services/spring-rabbitmq)
 
+## 🦆&nbsp; Docling
+
+- [Docling](arconia-docling)
+
 ## 🏢&nbsp; Multitenancy
 
 - [Tenant Source Properties](arconia-multitenancy/tenant-source-properties)

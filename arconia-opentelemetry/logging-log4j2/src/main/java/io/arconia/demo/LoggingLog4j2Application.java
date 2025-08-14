@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-public class ObservabilitySignalsApplication {
+public class LoggingLog4j2Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ObservabilitySignalsApplication.class, args);
@@ -41,15 +41,21 @@ class GreetingController {
 		this.tracer = tracer;
 	}
 
+	@GetMapping("/hello")
+	String hello(@RequestParam(defaultValue = "Mable") String name) {
+		logger.info("Sending greetings to %s".formatted(name));
+		return "Hello " + name;
+	}
+
 	@GetMapping("/metrics/micrometer")
-	public String metricsMicrometer(@RequestParam(defaultValue = "World") String name) {
+	String metricsMicrometer(@RequestParam(defaultValue = "World") String name) {
 		logger.info("Sending greetings to %s".formatted(name));
 		registry.counter("micrometer.greetings.total", "name", name).increment();
 		return "Hello " + name;
 	}
 
 	@GetMapping("/metrics/otel")
-	public String metricsOtel(@RequestParam(defaultValue = "World") String name) {
+	String metricsOtel(@RequestParam(defaultValue = "World") String name) {
 		logger.info("Sending greetings to %s".formatted(name));
 		meter.counterBuilder("otel.greetings.total")
 			.build()
@@ -58,7 +64,7 @@ class GreetingController {
 	}
 
 	@GetMapping("/traces/otel")
-	public String tracesOtel(@RequestParam(defaultValue = "World") String name) {
+	String tracesOtel(@RequestParam(defaultValue = "World") String name) {
 		Span span = tracer.spanBuilder("otel.greetings")
 			.setAttribute("name", name)
 			.startSpan();

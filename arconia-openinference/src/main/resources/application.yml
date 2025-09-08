@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: arconia-openinference
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+arconia:
+  otel:
+    logs:
+      enabled: false
+    metrics:
+      enabled: false

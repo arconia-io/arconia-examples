@@ -5,7 +5,7 @@ A collection of examples and sample applications showcasing the features of
 
 ## 🛠️&nbsp; Pre-Requisites
 
-* Java 24
+* Java 25
 * Podman/Docker
 
 ## 🚀&nbsp; Dev Services

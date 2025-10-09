@@ -2,6 +2,7 @@ version: 2
 updates:
   - package-ecosystem: gradle
     directories:
+      - "/arconia-docling"
       - "/arconia-dev-services/spring-data-jpa-mariadb"
       - "/arconia-dev-services/spring-data-jpa-mysql"
       - "/arconia-dev-services/spring-data-jpa-oracle"
@@ -11,6 +12,8 @@ updates:
       - "/arconia-dev-services/spring-rabbitmq"
       - "/arconia-multitenancy/tenant-source-properties"
       - "/arconia-multitenancy/web-http-server"
+      - "/arconia-openinference"
+      - "/arconia-opentelemetry/logging-log4j2"
       - "/arconia-opentelemetry/observability-signals"
     schedule:
       interval: daily

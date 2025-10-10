@@ -11,6 +11,7 @@ A collection of examples and sample applications showcasing the features of
 ## 🚀&nbsp; Dev Services
 
 - [Spring Data JPA MariaDB](arconia-dev-services/spring-data-jpa-mariadb)
+- [Spring Data MongoDB](arconia-dev-services/spring-data-mongodb)
 - [Spring Data JPA MySQL](arconia-dev-services/spring-data-jpa-mysql)
 - [Spring Data JPA Oracle](arconia-dev-services/spring-data-jpa-oracle)
 - [Spring Data JPA Oracle XE](arconia-dev-services/spring-data-jpa-oracle-xe)

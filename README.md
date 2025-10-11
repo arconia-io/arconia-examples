@@ -10,6 +10,7 @@ A collection of examples and sample applications showcasing the features of
 
 ## 🚀&nbsp; Dev Services
 
+- [Spring Data JDBC PostgreSQL](arconia-dev-services/spring-data-jdbc-postgresql)
 - [Spring Data JPA MariaDB](arconia-dev-services/spring-data-jpa-mariadb)
 - [Spring Data JPA MySQL](arconia-dev-services/spring-data-jpa-mysql)
 - [Spring Data JPA Oracle](arconia-dev-services/spring-data-jpa-oracle)
@@ -27,9 +28,11 @@ A collection of examples and sample applications showcasing the features of
 - [Tenant Source Properties](arconia-multitenancy/tenant-source-properties)
 - [Web HTTP Server](arconia-multitenancy/web-http-server)
 
-## 🔭&nbsp; OpenTelemetry
+## 🔭&nbsp; Observability
 
-- [Observability Signals](arconia-opentelemetry/observability-signals)
+- [OpenTelemetry Logging Log4j2](arconia-opentelemetry/logging-log4j2)
+- [OpenTelemetry Observability Signals](arconia-opentelemetry/observability-signals)
+- [OpenInference](arconia-opentelemetry/openinference)
 
 ## 🛡️&nbsp; Security
 

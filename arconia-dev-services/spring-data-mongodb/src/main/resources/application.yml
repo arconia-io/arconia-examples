@@ -1,9 +1,3 @@
 spring:
   application:
     name: spring-data-mongodb
-
-arconia:
-  dev:
-    services:
-      mongodb:
-        image-name: mongo:8.0-noble

@@ -12,11 +12,11 @@ A collection of examples and sample applications showcasing the features of
 
 - [Spring Data JDBC PostgreSQL](arconia-dev-services/spring-data-jdbc-postgresql)
 - [Spring Data JPA MariaDB](arconia-dev-services/spring-data-jpa-mariadb)
-- [Spring Data MongoDB](arconia-dev-services/spring-data-mongodb)
 - [Spring Data JPA MySQL](arconia-dev-services/spring-data-jpa-mysql)
 - [Spring Data JPA Oracle](arconia-dev-services/spring-data-jpa-oracle)
 - [Spring Data JPA Oracle XE](arconia-dev-services/spring-data-jpa-oracle-xe)
 - [Spring Data JPA PostgreSQL](arconia-dev-services/spring-data-jpa-postgresql)
+- [Spring Data MongoDB](arconia-dev-services/spring-data-mongodb)
 - [Spring Data Redis](arconia-dev-services/spring-data-redis)
 - [Spring RabbitMQ](arconia-dev-services/spring-rabbitmq)
 

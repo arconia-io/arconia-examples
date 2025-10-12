@@ -1,6 +1,3 @@
 spring:
   application:
     name: spring-data-jpa-postgresql
-  jpa:
-    hibernate:
-      ddl-auto: update

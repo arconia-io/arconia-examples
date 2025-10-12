@@ -26,6 +26,7 @@ dependencies {
     testAndDevelopmentOnly 'io.arconia:arconia-dev-services-redis'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework:spring-webflux'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
@@ -41,10 +42,4 @@ tasks.named('test') {
 
 tasks.named('bootBuildImage') {
 	builder = "paketobuildpacks/builder-noble-java-tiny"
-}
-
-springBoot {
-	buildInfo {
-		excludes = ['time']
-	}
 }

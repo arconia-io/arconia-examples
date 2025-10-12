@@ -3,6 +3,7 @@ package io.arconia.demo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.redis.core.RedisHash;
 import org.springframework.data.repository.ListCrudRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,6 +24,7 @@ public class Application {
 
 }
 
+@RedisHash("books")
 record Book(@Id String id, String title) {}
 
 interface BookRepository extends ListCrudRepository<Book, String> {}

@@ -19,8 +19,11 @@ repositories {
 
 dependencies {
 	implementation "io.arconia:arconia-spring-boot-starter"
-	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	implementation 'org.flywaydb:flyway-core'
+    implementation 'org.flywaydb:flyway-mysql'
 	
 	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
 
@@ -28,6 +31,7 @@ dependencies {
     testAndDevelopmentOnly 'io.arconia:arconia-dev-services-mariadb'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework:spring-webflux'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
@@ -43,10 +47,4 @@ tasks.named('test') {
 
 tasks.named('bootBuildImage') {
 	builder = "paketobuildpacks/builder-noble-java-tiny"
-}
-
-springBoot {
-	buildInfo {
-		excludes = ['time']
-	}
 }

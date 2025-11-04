@@ -3,11 +3,13 @@ updates:
   - package-ecosystem: gradle
     directories:
       - "/arconia-docling"
+      - "/arconia-dev-services/spring-data-jdbc-postgresql"
       - "/arconia-dev-services/spring-data-jpa-mariadb"
       - "/arconia-dev-services/spring-data-jpa-mysql"
       - "/arconia-dev-services/spring-data-jpa-oracle"
       - "/arconia-dev-services/spring-data-jpa-oracle-xe"
       - "/arconia-dev-services/spring-data-jpa-postgresql"
+      - "/arconia-dev-services/spring-data-mongodb"
       - "/arconia-dev-services/spring-data-redis"
       - "/arconia-dev-services/spring-rabbitmq"
       - "/arconia-multitenancy/tenant-source-properties"

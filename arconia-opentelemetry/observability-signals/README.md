@@ -4,7 +4,7 @@ Application that demonstrates the use of [Arconia OpenTelemetry](https://arconia
 
 ## Pre-requisites
 
-* Java 24
+* Java 25
 * Podman/Docker
 
 ## Running the application
@@ -15,7 +15,7 @@ Run the application as follows:
 ./gradlew bootRun
 ```
 
-Alternatively, you can use the [Arconia CLI](https://arconia.io/docs/arconia-cli/latest/):
+Alternatively, you can use the [Arconia CLI](https://docs.arconia.io/arconia-cli/latest/index.html):
 
 ```shell
 arconia dev
@@ -36,3 +36,25 @@ The application logs will show you the URL where you can access the Grafana obse
 By default, logs, metrics, and traces are exported via OTLP using the HTTP/Protobuf format.
 
 In Grafana, you can query the telemetry from the "Drilldown" and "Explore" sections.
+
+## Using the application
+
+Start by calling the root endpoint:
+
+```shell
+http :8080
+```
+
+Then, explore the endpoints using Micrometer instrumentation generating `micrometer.greeting` observations:
+
+```shell
+http :8080/micrometer/programmatic
+http :8080/micrometer/declarative
+```
+
+Finally, explore the endpoints using OpenTelemetry instrumentation generating `otel.greeting` observations:
+
+```shell
+http :8080/opentelemetry/metrics
+http :8080/opentelemetry/traces
+```

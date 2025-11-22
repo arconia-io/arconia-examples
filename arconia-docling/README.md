@@ -4,7 +4,7 @@ Application that demonstrates the use of [Arconia Docling](https://arconia.io/do
 
 ## Pre-requisites
 
-* Java 24
+* Java 25
 * Podman/Docker
 
 ## Running the application
@@ -30,13 +30,13 @@ The application will be accessible at http://localhost:8080.
 The application provides a simple HTTP endpoint to convert a document into Markdown format. You can test it out using [HTTPie](https://httpie.io) and providing the URL to a document you want to convert:
 
 ```shell
-http :8080/convert url=="https://arconia.io/docs/arconia/latest/dev-services/"
+http :8080/convert url=="https://docs.arconia.io/arconia-cli/latest/development/dev/"
 ```
 
 ## Accessing Docling
 
-The Docling Dev Service is configured to expose the Docling UI on a specific port. The application logs will show you the URL where you can access that.
+The Docling Dev Service is configured to expose the Docling Serve UI on a specific port. The application logs will show you the URL where you can access that.
 
 ```logs
-... Docling UI: http://localhost:<port>/ui
+... Docling Serve UI: http://localhost:<port>/ui
 ```

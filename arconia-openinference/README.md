@@ -4,7 +4,7 @@ Application that demonstrates the use of [Arconia OpenInference](https://arconia
 
 ## Pre-requisites
 
-* Java 24
+* Java 25
 * Podman/Docker
 
 ## Running the application
@@ -30,7 +30,7 @@ The application will be accessible at http://localhost:8080.
 The application logs will show you the URL where you can access the Phoenix AI observability platform.
 
 ```logs
-...OpenInference UI: http://localhost:<port>
+...Phoenix UI: http://localhost:<port>
 ```
 
 By default, traces are exported via OTLP using the HTTP/Protobuf format.

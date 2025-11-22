@@ -2,7 +2,7 @@
 
 ## Pre-requisites
 
-* Java 24
+* Java 25
 * Podman/Docker
 
 ## Running the application

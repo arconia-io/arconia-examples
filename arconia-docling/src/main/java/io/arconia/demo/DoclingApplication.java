@@ -4,9 +4,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.arconia.docling.client.DoclingClient;
-import io.arconia.docling.client.convert.request.ConvertDocumentRequest;
-import io.arconia.docling.client.convert.response.ConvertDocumentResponse;
+import ai.docling.api.serve.convert.request.ConvertDocumentRequest;
+import ai.docling.api.serve.convert.request.source.HttpSource;
+import ai.docling.api.serve.DoclingServeApi;
+
+import java.net.URI;
+import ai.docling.api.serve.convert.response.ConvertDocumentResponse;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,9 +26,9 @@ public class DoclingApplication {
 @RestController
 class DoclingController {
 
-	private final DoclingClient doclingClient;
+	private final DoclingServeApi doclingClient;
 
-	public DoclingController(DoclingClient doclingClient) {
+	public DoclingController(DoclingServeApi doclingClient) {
 		this.doclingClient = doclingClient;
 	}
 
@@ -33,9 +36,9 @@ class DoclingController {
 	public String convertDocument(@RequestParam("url") String url) {
 		ConvertDocumentResponse response = doclingClient
 			.convertSource(ConvertDocumentRequest.builder()
-				.addHttpSources(url)
+				.source(HttpSource.builder().url(URI.create(url)).build())
 				.build());
-		return response.document().markdownContent();
+		return response.getDocument().getMarkdownContent();
 	}
 
 }	

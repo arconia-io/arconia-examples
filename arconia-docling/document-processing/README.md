@@ -1,4 +1,4 @@
-# Arconia Docling
+# Arconia Docling: Document Processing
 
 Application that demonstrates the use of [Arconia Docling](https://arconia.io/docs/arconia/latest/integrations/docling) which provides a seamless Spring Boot integration with https://docling-project.github.io/docling[Docling], a powerful AI-powered document conversion service that transforms documents into structured formats like Markdown.
 

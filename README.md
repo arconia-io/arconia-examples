@@ -22,7 +22,8 @@ A collection of examples and sample applications showcasing the features of
 
 ## 🦆&nbsp; Docling
 
-- [Docling](arconia-docling)
+- [Document Processing](arconia-docling/document-processing)
+- [Retrieval Augmented Generation](arconia-docling/retrieval-augmented-generation)
 
 ## 🏢&nbsp; Multitenancy
 

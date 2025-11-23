@@ -30,7 +30,13 @@ The application will be accessible at http://localhost:8080.
 The application provides a simple HTTP endpoint to convert a document into Markdown format. You can test it out using [HTTPie](https://httpie.io) and providing the URL to a document you want to convert:
 
 ```shell
-http :8080/convert url=="https://docs.arconia.io/arconia-cli/latest/development/dev/"
+http :8080/convert/http url="https://docs.arconia.io/arconia-cli/latest/update/spring-boot/"
+```
+
+You can also convert documents from local files. The application includes a sample PDF document located at `src/main/resources/documents/story.pdf`. You can convert it as follows:
+
+```shell
+http :8080/convert/file
 ```
 
 ## Accessing Docling

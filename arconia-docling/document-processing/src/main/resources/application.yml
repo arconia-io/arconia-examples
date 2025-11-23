@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: document-processing
+
+management:
+  endpoint:
+    health:
+      show-components: always

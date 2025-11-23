@@ -1,0 +1,66 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.5.8'
+	id 'io.spring.dependency-management' version '1.1.7'
+	id 'org.graalvm.buildtools.native' version '0.10.6'
+}
+
+group = 'io.arconia'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(25)
+	}
+}
+
+repositories {
+	mavenCentral()
+	maven {
+		url = uri("https://central.sonatype.com/repository/maven-snapshots/")
+	}
+}
+
+dependencies {
+	implementation "io.arconia:arconia-docling-spring-boot-starter"
+
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	implementation 'org.springframework.ai:spring-ai-starter-model-ollama'
+	implementation 'org.springframework.ai:spring-ai-starter-vector-store-pgvector'
+	implementation 'org.springframework.ai:spring-ai-rag'
+
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testAndDevelopmentOnly 'io.arconia:arconia-dev-services-docling'
+	testAndDevelopmentOnly 'io.arconia:arconia-dev-services-ollama'
+	testAndDevelopmentOnly 'io.arconia:arconia-dev-services-postgresql'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "io.arconia:arconia-bom:0.19.0"
+		mavenBom "org.springframework.ai:spring-ai-bom:1.1.0"
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs.add("-parameters")
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+tasks.named('bootBuildImage') {
+	builder = "paketobuildpacks/builder-noble-java-tiny"
+}
+
+springBoot {
+	buildInfo {
+		excludes = ['time']
+	}
+}

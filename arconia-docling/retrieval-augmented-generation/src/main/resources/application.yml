@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: retrieval-augmented-generation
+  ai:
+    ollama:
+      init:
+        pull-model-strategy: when_missing
+      chat:
+        options:
+          model: granite4:3b
+          num-ctx: 4096
+      embedding:
+        options:
+          model: granite-embedding:278m
+    vectorstore:
+      pgvector:
+        initialize-schema: true
+        dimensions: 768
+        index-type: hnsw
+
+management:
+  endpoint:
+    health:
+      show-components: always
+
+arconia:
+  dev:
+    services:
+      postgresql:
+        image-name: pgvector/pgvector:pg18

@@ -2,7 +2,8 @@ version: 2
 updates:
   - package-ecosystem: gradle
     directories:
-      - "/arconia-docling"
+      - "/arconia-docling/document-processing"
+      - "/arconia-docling/retrieval-augmented-generation"
       - "/arconia-dev-services/spring-data-jdbc-postgresql"
       - "/arconia-dev-services/spring-data-jpa-mariadb"
       - "/arconia-dev-services/spring-data-jpa-mysql"

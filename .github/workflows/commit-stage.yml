@@ -29,7 +29,8 @@ jobs:
           arconia-dev-services/spring-data-mongodb,
           arconia-dev-services/spring-data-redis,
           arconia-dev-services/spring-rabbitmq,
-          arconia-docling,
+          arconia-docling/document-processing,
+          arconia-docling/retrieval-augmented-generation,
           arconia-multitenancy/tenant-source-properties,
           arconia-multitenancy/web-http-server,
           arconia-opentelemetry/observability-signals

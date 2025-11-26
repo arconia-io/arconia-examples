@@ -27,6 +27,7 @@ jobs:
           arconia-dev-services/spring-data-jpa-oracle-xe,
           arconia-dev-services/spring-data-jpa-postgresql,
           arconia-dev-services/spring-data-mongodb,
+          arconia-dev-services/spring-data-mongodb-atlas,
           arconia-dev-services/spring-data-redis,
           arconia-dev-services/spring-rabbitmq,
           arconia-docling/document-processing,

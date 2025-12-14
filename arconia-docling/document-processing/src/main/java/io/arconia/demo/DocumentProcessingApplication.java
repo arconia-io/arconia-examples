@@ -6,18 +6,15 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.RestController;
 
-import ai.docling.api.serve.convert.request.ConvertDocumentRequest;
-import ai.docling.api.serve.convert.request.options.ConvertDocumentOptions;
-import ai.docling.api.serve.convert.request.options.OutputFormat;
-import ai.docling.api.serve.convert.request.source.FileSource;
-import ai.docling.api.serve.convert.request.source.HttpSource;
-import ai.docling.api.serve.DoclingServeApi;
+import ai.docling.serve.api.convert.request.ConvertDocumentRequest;
+import ai.docling.serve.api.convert.request.source.FileSource;
+import ai.docling.serve.api.convert.request.source.HttpSource;
+import ai.docling.serve.api.convert.response.ConvertDocumentResponse;
+import ai.docling.serve.api.DoclingServeApi;
 
 import java.io.IOException;
 import java.net.URI;
 import java.util.Base64;
-
-import ai.docling.api.serve.convert.response.ConvertDocumentResponse;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

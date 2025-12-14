@@ -1,27 +1,21 @@
 spring:
   application:
-    name: retrieval-augmented-generation
+    name: docling-rag
+
   ai:
     ollama:
       init:
-        pull-model-strategy: when_missing
+        pull-model-strategy: when-missing
       chat:
-        options:
-          model: granite4:3b
-          num-ctx: 4096
+        model: granite4:3b
       embedding:
-        options:
-          model: granite-embedding:278m
+        model: granite-embedding:278m
+
     vectorstore:
       pgvector:
-        initialize-schema: true
         dimensions: 768
         index-type: hnsw
-
-management:
-  endpoint:
-    health:
-      show-components: always
+        initialize-schema: true
 
 arconia:
   dev:

@@ -22,14 +22,13 @@ repositories {
 }
 
 dependencies {
-	implementation "io.arconia:arconia-docling-spring-boot-starter"
-
-    implementation 'org.springframework.boot:spring-boot-starter-actuator'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'io.arconia:arconia-ai-docling-document-reader'
 
 	implementation 'org.springframework.ai:spring-ai-starter-model-ollama'
 	implementation 'org.springframework.ai:spring-ai-starter-vector-store-pgvector'
 	implementation 'org.springframework.ai:spring-ai-rag'
+
+	implementation 'org.springframework.boot:spring-boot-starter-web'
 
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testAndDevelopmentOnly 'io.arconia:arconia-dev-services-docling'
@@ -42,8 +41,8 @@ dependencies {
 
 dependencyManagement {
 	imports {
-		mavenBom "io.arconia:arconia-bom:0.19.0"
-		mavenBom "org.springframework.ai:spring-ai-bom:1.1.0"
+		mavenBom "io.arconia:arconia-bom:0.20.0"
+		mavenBom "org.springframework.ai:spring-ai-bom:1.1.2"
 	}
 }
 
@@ -57,10 +56,4 @@ tasks.named('test') {
 
 tasks.named('bootBuildImage') {
 	builder = "paketobuildpacks/builder-noble-java-tiny"
-}
-
-springBoot {
-	buildInfo {
-		excludes = ['time']
-	}
 }

@@ -1,7 +1,8 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.5.8'
+	id 'org.springframework.boot' version '4.0.1'
 	id 'io.spring.dependency-management' version '1.1.7'
+	id 'org.graalvm.buildtools.native' version '0.11.3'
 }
 
 group = 'io.arconia'
@@ -22,7 +23,7 @@ repositories {
 
 dependencies {
 	implementation "io.arconia:arconia-spring-boot-starter"
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	
 	runtimeOnly 'com.mysql:mysql-connector-j'
@@ -30,13 +31,15 @@ dependencies {
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
     testAndDevelopmentOnly 'io.arconia:arconia-dev-services-mysql'
 
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation "org.springframework.boot:spring-boot-starter-data-jpa-test"
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation "org.springframework.boot:spring-boot-starter-webmvc-test"
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 dependencyManagement {
 	imports {
-		mavenBom "io.arconia:arconia-bom:0.20.0"
+		mavenBom "io.arconia:arconia-bom:0.21.0"
 	}
 }
 
@@ -50,10 +53,4 @@ tasks.named('test') {
 
 tasks.named('bootBuildImage') {
 	builder = "paketobuildpacks/builder-noble-java-tiny"
-}
-
-springBoot {
-	buildInfo {
-		excludes = ['time']
-	}
 }

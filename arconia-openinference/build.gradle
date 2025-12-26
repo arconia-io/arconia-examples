@@ -1,8 +1,8 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.5.8'
+	id 'org.springframework.boot' version '4.0.1'
 	id 'io.spring.dependency-management' version '1.1.7'
-	id 'org.graalvm.buildtools.native' version '0.10.6'
+	id 'org.graalvm.buildtools.native' version '0.11.3'
 }
 
 group = 'io.arconia'
@@ -25,20 +25,21 @@ dependencies {
     implementation 'io.arconia:arconia-openinference-semantic-conventions'
 	implementation 'io.arconia:arconia-opentelemetry-spring-boot-starter'
 
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
     implementation 'org.springframework.ai:spring-ai-starter-model-mistral-ai'
 
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testAndDevelopmentOnly 'io.arconia:arconia-dev-services-phoenix'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation "org.springframework.boot:spring-boot-starter-webmvc-test"
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 dependencyManagement {
 	imports {
-		mavenBom "io.arconia:arconia-bom:0.20.0"
-        mavenBom "org.springframework.ai:spring-ai-bom:1.1.2"
+		mavenBom "io.arconia:arconia-bom:0.21.0"
+        mavenBom "org.springframework.ai:spring-ai-bom:2.0.0-M1"
     }
 }
 
@@ -52,10 +53,4 @@ tasks.named('test') {
 
 tasks.named('bootBuildImage') {
 	builder = "paketobuildpacks/builder-noble-java-tiny"
-}
-
-springBoot {
-	buildInfo {
-		excludes = ['time']
-	}
 }

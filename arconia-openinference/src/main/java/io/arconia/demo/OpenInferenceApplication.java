@@ -13,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -42,7 +43,7 @@ class ChatController {
     }
 
     @GetMapping("/chat")
-    String chat(String question) {
+    String chat(@RequestParam("question") String question) {
         logger.info("Chatting: {}", question);
         return chatClient
                 .prompt(question)
@@ -51,7 +52,7 @@ class ChatController {
     }
 
     @GetMapping("/chat/tools")
-    String chatTools(String authorName) {
+    String chatTools(@RequestParam("authorName") String authorName) {
         logger.info("Chatting with tools: {}", authorName);
         var userPromptTemplate = "What books written by {author} are available in the library?";
         return chatClient.prompt()

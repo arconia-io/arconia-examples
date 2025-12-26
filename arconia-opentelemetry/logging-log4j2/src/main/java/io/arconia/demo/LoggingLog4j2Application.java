@@ -42,7 +42,7 @@ class GreetingController {
 	}
 
 	@GetMapping("/hello")
-	String hello(@RequestParam(defaultValue = "Mable") String name) {
+	String hello(@RequestParam(name = "name", defaultValue = "Mable") String name) {
 		logger.info("Sending greetings to %s".formatted(name));
 		return "Hello " + name;
 	}

@@ -6,9 +6,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MessageProcessor {
-    private static final Logger log = LoggerFactory.getLogger(MessageProcessor.class);
+    private static final Logger logger = LoggerFactory.getLogger(MessageProcessor.class);
 
     public void process(String message) {
-        log.info("Received message: {}", message);
+        logger.info("Received message: {}", message);
     }
 }

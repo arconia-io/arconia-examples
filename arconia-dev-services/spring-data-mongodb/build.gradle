@@ -1,7 +1,8 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.5.8'
+	id 'org.springframework.boot' version '4.0.1'
 	id 'io.spring.dependency-management' version '1.1.7'
+	id 'org.graalvm.buildtools.native' version '0.11.3'
 }
 
 group = 'io.arconia'
@@ -23,14 +24,16 @@ repositories {
 dependencies {
 	implementation "io.arconia:arconia-spring-boot-starter"
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
 
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
     testAndDevelopmentOnly 'io.arconia:arconia-dev-services-mongodb'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework:spring-webflux'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	testImplementation "org.springframework.boot:spring-boot-starter-webmvc-test"
+	testImplementation "org.springframework.boot:spring-boot-starter-data-mongodb-test"
+	testImplementation "org.springframework.boot:spring-boot-webtestclient"
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 tasks.named('test') {
@@ -39,7 +42,7 @@ tasks.named('test') {
 
 dependencyManagement {
     imports {
-        mavenBom "io.arconia:arconia-bom:0.20.0"
+        mavenBom "io.arconia:arconia-bom:0.21.0"
     }
 }
 

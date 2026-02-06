@@ -17,6 +17,7 @@ A collection of examples and sample applications showcasing the features of
 - [Spring Data JPA Oracle XE](arconia-dev-services/spring-data-jpa-oracle-xe)
 - [Spring Data JPA PostgreSQL](arconia-dev-services/spring-data-jpa-postgresql)
 - [Spring Data MongoDB](arconia-dev-services/spring-data-mongodb)
+- [Spring Data MongoDB](arconia-dev-services/spring-data-mongodb-atlas)
 - [Spring Data Redis](arconia-dev-services/spring-data-redis)
 - [Spring RabbitMQ](arconia-dev-services/spring-rabbitmq)
 

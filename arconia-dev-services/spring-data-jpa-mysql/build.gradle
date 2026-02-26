@@ -25,6 +25,9 @@ dependencies {
 	implementation "io.arconia:arconia-spring-boot-starter"
 	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	implementation 'org.springframework.boot:spring-boot-starter-flyway'
+    implementation 'org.flywaydb:flyway-mysql'
 	
 	runtimeOnly 'com.mysql:mysql-connector-j'
 
@@ -32,14 +35,15 @@ dependencies {
     testAndDevelopmentOnly 'io.arconia:arconia-dev-services-mysql'
 
 	testImplementation "org.springframework.boot:spring-boot-starter-data-jpa-test"
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation "org.springframework.boot:spring-boot-starter-flyway-test"
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation "org.springframework.boot:spring-boot-starter-webmvc-test"
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 dependencyManagement {
 	imports {
-		mavenBom "io.arconia:arconia-bom:0.22.0"
+		mavenBom "io.arconia:arconia-bom:0.23.0"
 	}
 }
 

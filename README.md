@@ -11,6 +11,7 @@ A collection of examples and sample applications showcasing the features of
 ## 🚀&nbsp; Dev Services
 
 - [Spring Data JDBC PostgreSQL](arconia-dev-services/spring-data-jdbc-postgresql)
+- [Spring Data JDBC PostgreSQL with Volume](arconia-dev-services/spring-data-jdbc-postgresql-volume)
 - [Spring Data JPA MariaDB](arconia-dev-services/spring-data-jpa-mariadb)
 - [Spring Data JPA MySQL](arconia-dev-services/spring-data-jpa-mysql)
 - [Spring Data JPA Oracle](arconia-dev-services/spring-data-jpa-oracle)

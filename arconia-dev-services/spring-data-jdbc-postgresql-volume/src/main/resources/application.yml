@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: spring-data-jdbc-postgresql-volume
+
+arconia:
+  dev:
+    services:
+      postgresql:
+        environment:
+          PGDATA: "/var/lib/postgresql/data/pgdata"
+        volumes:
+          - host-path: ./data
+            container-path: /var/lib/postgresql/data

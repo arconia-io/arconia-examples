@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: spring-ai-langsmith
+
+  ai:
+    ollama:
+      init:
+        pull-model-strategy: when-missing
+      chat:
+        options:
+          model: "ministral-3:3b" 
+      embedding:
+        options:
+          model: "granite-embedding:30m"
+
+arconia:
+  otel:
+    exporter:
+      otlp:
+        endpoint: "https://eu.api.smith.langchain.com/otel"
+        headers:
+          "x-api-key": "${LANGSMITH_API_KEY}"
+          "Langsmith-Project": "spring-ai-langsmith"
+    logs:
+      enabled: false

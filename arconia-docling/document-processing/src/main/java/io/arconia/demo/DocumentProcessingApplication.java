@@ -10,6 +10,7 @@ import ai.docling.serve.api.convert.request.ConvertDocumentRequest;
 import ai.docling.serve.api.convert.request.source.FileSource;
 import ai.docling.serve.api.convert.request.source.HttpSource;
 import ai.docling.serve.api.convert.response.ConvertDocumentResponse;
+import ai.docling.serve.api.convert.response.InBodyConvertDocumentResponse;
 import ai.docling.serve.api.DoclingServeApi;
 
 import java.io.IOException;
@@ -45,7 +46,7 @@ class DocumentProcessingController {
 			.convertSource(ConvertDocumentRequest.builder()
 				.source(HttpSource.builder().url(URI.create(url)).build())
 				.build());
-		return response.getDocument().getMarkdownContent();
+		return ((InBodyConvertDocumentResponse) response).getDocument().getMarkdownContent();
 	}
 
 	@GetMapping("/file")
@@ -59,7 +60,7 @@ class DocumentProcessingController {
 					.base64String(base64File)
 					.build())
 				.build());
-		return response.getDocument().getMarkdownContent();
+		return ((InBodyConvertDocumentResponse) response).getDocument().getMarkdownContent();
 	}
 
 }

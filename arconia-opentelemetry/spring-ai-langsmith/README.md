@@ -1,23 +1,25 @@
 # Arconia OpenTelemetry with Spring AI and LangSmith
 
-Application that demonstrates the use of [Arconia OpenTelemetry](https://arconia.io/docs/arconia/latest/opentelemetry) with Spring AI and LangSmith.
+Application that demonstrates the use of [Arconia OpenTelemetry](https://docs.arconia.io/arconia/latest/opentelemetry/) with Spring AI and LangSmith, using the [Arconia LangSmith Semantic Conventions](https://docs.arconia.io/arconia/latest/observation/semantic-conventions/langsmith/).
 
 ## Pre-requisites
 
 * Java 25
 * Podman/Docker
 
-## Ollama
+### Ollama
 
-The application consumes models from an [Ollama](https://ollama.ai) inference server. If you don't have an Ollama server running locally on your laptop, an Ollama service will be automatically spun up for you by the [Arconia Dev Services](https://arconia.io/docs/arconia/latest/dev-services/) when you run the application. Either way, Spring AI will take care of pulling the needed Ollama models when the application starts, if they are not available yet on your machine.
+The application consumes models from an [Ollama](https://ollama.ai) inference server. If you don't have an Ollama server running locally on your laptop, an Ollama service will be automatically spun up for you by the [Arconia Dev Services](https://docs.arconia.io/arconia/latest/dev-services/) when you run the application. Either way, Spring AI will take care of pulling the needed Ollama models when the application starts, if they are not available yet on your machine.
 
 ## LangSmith
 
 This application uses [LangSmith](https://eu.smith.langchain.com) to visualize the interactions with the language model. To use LangSmith, you need to set the `LANGSMITH_API_KEY` environment variable with your LangSmith API key.
 
 ```shell
-export LANGSMITH_API_KEY=your_langsmith_api_key
+export LANGSMITH_API_KEY=<your_langsmith_api_key>
 ```
+
+The application is configured to ship traces to the EU region of LangSmith. If you want to ship traces to a different region, you can set a different value for the `otel.exporter.otlp.endpoint` configuration property.
 
 ## Running the application
 
@@ -33,7 +35,7 @@ Alternatively, you can use the [Arconia CLI](https://arconia.io/docs/arconia-cli
 arconia dev
 ```
 
-Under the hood, the Arconia framework will automatically spin up an [Ollama](https://arconia.io/docs/arconia/latest/dev-services/ollama/) service, in case you don't have one running locally (see [Arconia Dev Services](https://arconia.io/docs/arconia/latest/dev-services/) for more information).
+Under the hood, the Arconia framework will automatically spin up an [Ollama](https://docs.arconia.io/arconia/latest/dev-services/ollama/) service, in case you don't have one running locally (see [Arconia Dev Services](https://docs.arconia.io/arconia/latest/dev-services/) for more information).
 
 The application will be accessible at http://localhost:8080.
 

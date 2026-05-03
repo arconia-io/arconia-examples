@@ -7,7 +7,7 @@ spring:
       init:
         pull-model-strategy: when-missing
       chat:
-        model: granite4:3b
+        model: ministral-3:8b
       embedding:
         model: granite-embedding:278m
 
@@ -16,9 +16,3 @@ spring:
         dimensions: 768
         index-type: hnsw
         initialize-schema: true
-
-arconia:
-  dev:
-    services:
-      postgresql:
-        image-name: pgvector/pgvector:pg18

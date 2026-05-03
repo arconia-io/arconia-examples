@@ -1,11 +1,15 @@
 # Arconia OpenInference
 
-Application that demonstrates the use of [Arconia OpenInference](https://arconia.io/docs/arconia/latest/observability/generative-ai/) semantic conventions.
+Application that demonstrates the use of [Arconia OpenTelemetry](https://docs.arconia.io/arconia/latest/opentelemetry/) with Spring AI and Phoenix, using the [Arconia OpenInference Semantic Conventions](https://docs.arconia.io/arconia/latest/observation/semantic-conventions/openinference/).
 
 ## Pre-requisites
 
 * Java 25
 * Podman/Docker
+
+### Ollama
+
+The application consumes models from an [Ollama](https://ollama.ai) inference server. If you don't have an Ollama server running locally on your laptop, an Ollama service will be automatically spun up for you by the [Arconia Dev Services](https://docs.arconia.io/arconia/latest/dev-services/) when you run the application. Either way, Spring AI will take care of pulling the needed Ollama models when the application starts, if they are not available yet on your machine.
 
 ## Running the application
 
@@ -21,7 +25,7 @@ Alternatively, you can use the [Arconia CLI](https://arconia.io/docs/arconia-cli
 arconia dev
 ```
 
-Under the hood, the Arconia framework will automatically spin up an [Arize Phoenix](https://arconia.io/docs/arconia/latest/dev-services/phoenix/) AI observability platform using Testcontainers (see [Arconia Dev Services](https://arconia.io/docs/arconia/latest/dev-services/) for more information).
+Under the hood, the Arconia framework will automatically spin up an [Arize Phoenix](https://docs.arconia.io/arconia/latest/dev-services/phoenix/) AI observability platform using Testcontainers (see [Arconia Dev Services](https://docs.arconia.io/arconia/latest/dev-services/) for more information).
 
 The application will be accessible at http://localhost:8080.
 

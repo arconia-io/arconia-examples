@@ -34,7 +34,10 @@ jobs:
           arconia-docling/retrieval-augmented-generation,
           arconia-multitenancy/tenant-source-properties,
           arconia-multitenancy/web-http-server,
-          arconia-opentelemetry/observability-signals
+          arconia-openinference,
+          arconia-opentelemetry/logging-log4js2,
+          arconia-opentelemetry/observability-signals,
+          arconia-opentelemetry/spring-ai-langsmith
         ]
     steps:
       - name: Check out source code

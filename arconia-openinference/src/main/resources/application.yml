@@ -1,16 +1,13 @@
 spring:
   application:
     name: arconia-openinference
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-
-arconia:
-  otel:
-    logs:
-      enabled: false
-    metrics:
-      enabled: false
+  ai:
+    ollama:
+      init:
+        pull-model-strategy: when_missing
+      chat:
+        options:
+          model: ministral-3:8b
+      embedding:
+        options:
+          model: granite-embedding:30m

@@ -1,6 +1,6 @@
 package io.arconia.demo;
 
-import io.arconia.multitenancy.core.context.TenantContextHolder;
+import io.arconia.multitenancy.core.context.TenantContext;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -11,7 +11,7 @@ import org.springframework.web.servlet.function.ServerResponse;
 @SpringBootApplication
 public class WebHttpServerApplication {
 
-	public static void main(String[] args) {
+	static void main(String[] args) {
 		SpringApplication.run(WebHttpServerApplication.class, args);
 	}
 
@@ -19,7 +19,7 @@ public class WebHttpServerApplication {
 	RouterFunction<ServerResponse> routerFunctions() {
 		return RouterFunctions.route()
 				.GET("/tenant", _ -> ServerResponse.ok()
-						.body(TenantContextHolder.getRequiredTenantIdentifier()))
+						.body(TenantContext.getRequiredTenantIdentifier()))
 				.build();
 	}
 

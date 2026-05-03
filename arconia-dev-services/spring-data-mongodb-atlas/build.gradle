@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '4.0.5'
+    id 'org.springframework.boot' version '4.0.6'
     id 'io.spring.dependency-management' version '1.1.7'
 }
 
@@ -28,7 +28,6 @@ dependencies {
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     testAndDevelopmentOnly 'io.arconia:arconia-dev-services-mongodb-atlas'
 
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation "org.springframework.boot:spring-boot-starter-webmvc-test"
     testImplementation "org.springframework.boot:spring-boot-starter-data-mongodb-test"
     testImplementation "org.springframework.boot:spring-boot-webtestclient"
@@ -41,7 +40,7 @@ tasks.named('test') {
 
 dependencyManagement {
     imports {
-        mavenBom "io.arconia:arconia-bom:0.25.0"
+        mavenBom "io.arconia:arconia-bom:0.26.0"
     }
 }
 

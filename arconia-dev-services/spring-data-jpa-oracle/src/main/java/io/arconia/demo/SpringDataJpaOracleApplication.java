@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 public class SpringDataJpaOracleApplication {
 	private static final Logger log = LoggerFactory.getLogger(SpringDataJpaOracleApplication.class);
 
-	public static void main(String[] args) {
+	static void main(String[] args) {
 		SpringApplication.run(SpringDataJpaOracleApplication.class, args);
 	}
 

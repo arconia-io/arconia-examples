@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @SpringBootApplication
 public class DocumentProcessingApplication {
 
-	public static void main(String[] args) {
+	static void main(String[] args) {
 		SpringApplication.run(DocumentProcessingApplication.class, args);
 	}
 

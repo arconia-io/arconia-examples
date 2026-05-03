@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 public class SpringDataJpaOracleXEApplication {
 	private static final Logger log = LoggerFactory.getLogger(SpringDataJpaOracleXEApplication.class);
 
-	public static void main(String[] args) {
+	static void main(String[] args) {
 		SpringApplication.run(SpringDataJpaOracleXEApplication.class, args);
 	}
 

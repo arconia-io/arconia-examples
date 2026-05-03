@@ -1,6 +1,6 @@
 # Arconia Docling: Retrieval Augmented Generation
 
-Application that demonstrates the use of [Docling Document Reader](https://arconia.io/docs/arconia/latest/generative-ai/docling-document-reader) which integrates with Spring AI for building a data ingestion pipeline to be used with Retrieval Augmented Generation (RAG) systems.
+Application that demonstrates the use of [Docling Document Reader](https://docs.arconia.io/arconia/latest/generative-ai/docling-document-reader) which integrates with Spring AI for building a data ingestion pipeline to be used with Retrieval Augmented Generation (RAG) systems.
 
 ## Pre-requisites
 
@@ -9,7 +9,7 @@ Application that demonstrates the use of [Docling Document Reader](https://arcon
 
 ## Ollama
 
-The application consumes models from an [Ollama](https://ollama.ai) inference server. You can either run Ollama locally on your laptop, or rely on the Testcontainers support in Spring Boot to spin up an Ollama service automatically. If you choose the first option, make sure you have Ollama installed and running on your laptop. Either way, Spring AI will take care of pulling the needed Ollama models when the application starts, if they are not available yet on your machine.
+The application consumes models from an [Ollama](https://ollama.ai) inference server. If you don't have an Ollama server running locally on your laptop, an Ollama service will be automatically spun up for you by the [Arconia Dev Services](https://arconia.io/docs/arconia/latest/dev-services/) when you run the application. Either way, Spring AI will take care of pulling the needed Ollama models when the application starts, if they are not available yet on your machine.
 
 ## Running the application
 

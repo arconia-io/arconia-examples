@@ -25,7 +25,7 @@ public class ObservabilitySignalsApplication {
 
 	private static final Logger logger = LoggerFactory.getLogger(ObservabilitySignalsApplication.class);
 
-	public static void main(String[] args) {
+	static void main(String[] args) {
 		SpringApplication.run(ObservabilitySignalsApplication.class, args);
 	}
 

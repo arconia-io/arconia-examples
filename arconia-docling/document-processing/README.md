@@ -1,6 +1,6 @@
 # Arconia Docling: Document Processing
 
-Application that demonstrates the use of [Arconia Docling](https://arconia.io/docs/arconia/latest/integrations/docling) which provides a seamless Spring Boot integration with https://docling-project.github.io/docling[Docling], a powerful AI-powered document conversion service that transforms documents into structured formats like Markdown.
+Application that demonstrates the use of [Arconia Docling](https://docs.arconia.io/arconia/latest/integrations/docling/) which provides a seamless Spring Boot integration with https://docling-project.github.io/docling[Docling], a powerful AI-powered document conversion service that transforms documents into structured formats like Markdown.
 
 ## Pre-requisites
 
@@ -21,7 +21,7 @@ Alternatively, you can use the [Arconia CLI](https://arconia.io/docs/arconia-cli
 arconia dev
 ```
 
-Under the hood, the Arconia framework will automatically spin up a [Docling](https://arconia.io/docs/arconia/latest/dev-services/docling/) server using Testcontainers (see [Arconia Dev Services](https://arconia.io/docs/arconia/latest/dev-services/) for more information).
+Under the hood, the Arconia framework will automatically spin up a [Docling](https://docs.arconia.io/arconia/latest/dev-services/docling/) server using Testcontainers (see [Arconia Dev Services](https://docs.arconia.io/arconia/latest/dev-services/) for more information).
 
 The application will be accessible at http://localhost:8080.
 

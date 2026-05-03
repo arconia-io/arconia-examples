@@ -25,7 +25,7 @@ import jakarta.persistence.Id;
 @SpringBootApplication
 public class Application {
 
-	public static void main(String[] args) {
+	static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
 

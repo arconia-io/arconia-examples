@@ -23,7 +23,7 @@ import java.util.List;
 @SpringBootApplication
 public class DoclingRagApplication {
 
-	public static void main(String[] args) {
+	static void main(String[] args) {
 		SpringApplication.run(DoclingRagApplication.class, args);
 	}
 

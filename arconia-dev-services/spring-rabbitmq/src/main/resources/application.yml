@@ -1,6 +1,3 @@
 spring:
   application:
     name: spring-rabbitmq
-  jpa:
-    hibernate:
-      ddl-auto: update

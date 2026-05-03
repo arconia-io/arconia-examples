@@ -1,6 +1,6 @@
 # Arconia OpenTelemetry: Observability Signals
 
-Application that demonstrates the use of [Arconia OpenTelemetry](https://arconia.io/docs/arconia/latest/opentelemetry/) to collect and export observability signals (logs, metrics, and traces) from a Spring Boot application.
+Application that demonstrates the use of [Arconia OpenTelemetry](https://docs.arconia.io/arconia/latest/opentelemetry/ to collect and export observability signals (logs, metrics, and traces) from a Spring Boot application.
 
 ## Pre-requisites
 
@@ -21,7 +21,7 @@ Alternatively, you can use the [Arconia CLI](https://docs.arconia.io/arconia-cli
 arconia dev
 ```
 
-Under the hood, the Arconia framework will automatically spin up a [Grafana LGTM](https://arconia.io/docs/arconia/latest/dev-services/lgtm/) observability platform using Testcontainers (see [Arconia Dev Services](https://arconia.io/docs/arconia/latest/dev-services/) for more information).
+Under the hood, the Arconia framework will automatically spin up a [Grafana LGTM](https://docs.arconia.io/arconia/latest/dev-services/lgtm/) observability platform using Testcontainers (see [Arconia Dev Services](https://docs.arconia.io/arconia/latest/dev-services/) for more information).
 
 The application will be accessible at http://localhost:8080.
 
@@ -30,7 +30,7 @@ The application will be accessible at http://localhost:8080.
 The application logs will show you the URL where you can access the Grafana observability platform.
 
 ```logs
-...o.t.grafana.LgtmStackContainer: Access to the Grafana dashboard: http://localhost:38125
+...o.t.grafana.LgtmStackContainer: Access to the Grafana dashboard: http://localhost:<port>
 ```
 
 By default, logs, metrics, and traces are exported via OTLP using the HTTP/Protobuf format.

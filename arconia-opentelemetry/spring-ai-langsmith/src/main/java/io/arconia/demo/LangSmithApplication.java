@@ -23,7 +23,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @SpringBootApplication
 public class LangSmithApplication {
 
-	public static void main(String[] args) {
+    static void main(String[] args) {
 		SpringApplication.run(LangSmithApplication.class, args);
 	}
 

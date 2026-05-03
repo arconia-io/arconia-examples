@@ -8,7 +8,7 @@ spring:
         pull-model-strategy: when-missing
       chat:
         options:
-          model: "ministral-3:3b" 
+          model: "ministral-3:8b"
       embedding:
         options:
           model: "granite-embedding:30m"
@@ -22,4 +22,6 @@ arconia:
           "x-api-key": "${LANGSMITH_API_KEY}"
           "Langsmith-Project": "spring-ai-langsmith"
     logs:
+      enabled: false
+    metrics:
       enabled: false

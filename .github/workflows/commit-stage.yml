@@ -35,7 +35,7 @@ jobs:
           arconia-multitenancy/tenant-source-properties,
           arconia-multitenancy/web-http-server,
           arconia-openinference,
-          arconia-opentelemetry/logging-log4js2,
+          arconia-opentelemetry/logging-log4j2,
           arconia-opentelemetry/observability-signals,
           arconia-opentelemetry/spring-ai-langsmith
         ]

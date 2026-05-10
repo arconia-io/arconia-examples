@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: spring-ai-openlit
+
+  ai:
+    ollama:
+      init:
+        pull-model-strategy: when-missing
+      chat:
+        model: "ministral-3:8b"
+      embedding:
+        options:
+          model: "granite-embedding:30m"

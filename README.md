@@ -10,6 +10,7 @@ A collection of examples and sample applications showcasing the features of
 
 ## 🚀&nbsp; Dev Services
 
+- [Spring Cloud AWS Floci](arconia-dev-services/spring-cloud-aws-floci)
 - [Spring Data JDBC PostgreSQL](arconia-dev-services/spring-data-jdbc-postgresql)
 - [Spring Data JDBC PostgreSQL with Volume](arconia-dev-services/spring-data-jdbc-postgresql-volume)
 - [Spring Data JPA MariaDB](arconia-dev-services/spring-data-jpa-mariadb)
@@ -36,8 +37,9 @@ A collection of examples and sample applications showcasing the features of
 
 - [OpenTelemetry Logging Log4j2](arconia-opentelemetry/logging-log4j2)
 - [OpenTelemetry Observability Signals](arconia-opentelemetry/observability-signals)
-- [Spring AI and OpenInference](arconia-openinference)
 - [Spring AI and LangSmith](arconia-opentelemetry/spring-ai-langsmith)
+- [Spring AI and OpenInference](arconia-openinference)
+- [Spring AI and OpenLit](arconia-opentelemetry/spring-ai-openlit)
 
 ## 🛡️&nbsp; Security
 

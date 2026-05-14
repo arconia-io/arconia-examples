@@ -40,8 +40,8 @@ dependencies {
 
 dependencyManagement {
 	imports {
-		mavenBom "io.arconia:arconia-bom:0.26.0"
-		mavenBom "org.springframework.ai:spring-ai-bom:2.0.0-M5"
+		mavenBom "io.arconia:arconia-bom:0.27.0"
+		mavenBom "org.springframework.ai:spring-ai-bom:2.0.0-M6"
 	}
 }
 

@@ -11,3 +11,10 @@ spring:
       embedding:
         options:
           model: "granite-embedding:30m"
+
+arconia:
+  observations:
+    conventions:
+      opentelemetry:
+        ai:
+          flavor: openlit

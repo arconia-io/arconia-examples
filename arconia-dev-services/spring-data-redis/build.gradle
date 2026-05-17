@@ -37,7 +37,7 @@ dependencies {
 
 dependencyManagement {
 	imports {
-		mavenBom "io.arconia:arconia-bom:0.27.0"
+		mavenBom "io.arconia:arconia-bom:0.27.1"
 	}
 }
 

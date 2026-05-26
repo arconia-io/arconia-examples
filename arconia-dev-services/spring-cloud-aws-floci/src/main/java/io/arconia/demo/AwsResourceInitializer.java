@@ -11,7 +11,7 @@ import software.amazon.awssdk.services.dynamodb.model.KeyType;
 import software.amazon.awssdk.services.dynamodb.model.ResourceInUseException;
 import software.amazon.awssdk.services.dynamodb.model.ScalarAttributeType;
 import software.amazon.awssdk.services.s3.S3Client;
-import software.amazon.awssdk.services.s3.model.BucketAlreadyOwnedByYouException;
+import software.amazon.awssdk.services.s3.model.NoSuchBucketException;
 
 @Component
 class AwsResourceInitializer {
@@ -27,7 +27,8 @@ class AwsResourceInitializer {
 	@EventListener(ApplicationReadyEvent.class)
 	void createResources() {
 		createBookTable();
-		createScrollsBucket();
+		// Relying on the Floci init hooks to create the S3 buckets.
+		//createBucketIfMissing(ScrollController.BUCKET);
 	}
 
 	private void createBookTable() {
@@ -48,10 +49,11 @@ class AwsResourceInitializer {
 		}
 	}
 
-	private void createScrollsBucket() {
+	private void createBucketIfMissing(String bucket) {
 		try {
-			s3Client.createBucket(r -> r.bucket(ScrollController.BUCKET));
-		} catch (BucketAlreadyOwnedByYouException ignored) {
+			s3Client.headBucket(r -> r.bucket(bucket));
+		} catch (NoSuchBucketException e) {
+			s3Client.createBucket(r -> r.bucket(bucket));
 		}
 	}
 

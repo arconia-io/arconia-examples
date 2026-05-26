@@ -1,3 +1,12 @@
 spring:
   application:
     name: spring-cloud-aws-floci
+
+arconia:
+  dev:
+    services:
+      floci:
+        image-name: floci/floci:1.5.19-compat
+        resources:
+          - source-path: classpath:floci/init.sh
+            container-path: /etc/floci/init/ready.d/init.sh

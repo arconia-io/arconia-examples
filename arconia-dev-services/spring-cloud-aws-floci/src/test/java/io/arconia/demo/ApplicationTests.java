@@ -90,7 +90,7 @@ class ApplicationTests {
 
 	@Test
 	void storeAndReadScroll() {
-		var scroll = new Scroll("prophecy-of-dust", "The Dust will settle where the heart is true.");
+		var scroll = new Scroll("panserbjorn-dust", "Panserbjørne armor gathers Dust.");
 
 		restTestClient
 			.post()
@@ -100,19 +100,19 @@ class ApplicationTests {
 			.expectStatus().isCreated()
 			.expectBody(Scroll.class)
 			.value(s -> {
-				assertThat(s.name()).isEqualTo("prophecy-of-dust");
-				assertThat(s.content()).isEqualTo("The Dust will settle where the heart is true.");
+				assertThat(s.name()).isEqualTo("panserbjorn-dust");
+				assertThat(s.content()).isEqualTo("Panserbjørne armor gathers Dust.");
 			});
 
 		restTestClient
 			.get()
-			.uri("/scrolls/prophecy-of-dust")
+			.uri("/scrolls/panserbjorn-dust")
 			.exchange()
 			.expectStatus().isOk()
 			.expectBody(Scroll.class)
 			.value(s -> {
-				assertThat(s.name()).isEqualTo("prophecy-of-dust");
-				assertThat(s.content()).isEqualTo("The Dust will settle where the heart is true.");
+				assertThat(s.name()).isEqualTo("panserbjorn-dust");
+				assertThat(s.content()).isEqualTo("Panserbjørne armor gathers Dust.");
 			});
 	}
 

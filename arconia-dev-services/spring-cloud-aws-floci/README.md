@@ -68,13 +68,13 @@ The `DustReadingListener` will pick up the message and log it.
 Store a scroll in the `magisterium-archives` bucket:
 
 ```shell
-http POST :8080/scrolls name="prophecy-of-dust" content="The Dust will settle where the heart is true."
+http POST :8080/scrolls name="panserbjorn-dust" content="Panserbjørne armor gathers Dust."
 ```
 
 Retrieve a scroll by name:
 
 ```shell
-http GET :8080/scrolls/prophecy-of-dust
+http GET :8080/scrolls/panserbjorn-dust
 ```
 
 List all scrolls in the bucket:

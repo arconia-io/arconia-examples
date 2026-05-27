@@ -1,6 +1,20 @@
 spring:
   application:
-    name: spring-rabbitmq
-  jpa:
-    hibernate:
-      ddl-auto: update
+    name: spring-apache-pulsar
+  pulsar:
+    client:
+      service-url: pulsar://localhost:6650
+    admin:
+      service-url: http://localhost:8080
+
+arconia:
+  dev:
+    services:
+      pulsar:
+        enabled: true
+        port: 0
+        environment:
+          PULSAR_PREFIX_advertisedAddress: localhost
+          PULSAR_PREFIX_brokerServiceUrl: pulsar://localhost:6650
+          PULSAR_PREFIX_webServiceUrl: http://localhost:8080
+

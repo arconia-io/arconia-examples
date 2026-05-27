@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringRabbitMQApplication {
+public class SpringApachePulsarApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringRabbitMQApplication.class, args);
+		SpringApplication.run(SpringApachePulsarApplication.class, args);
 	}
 }

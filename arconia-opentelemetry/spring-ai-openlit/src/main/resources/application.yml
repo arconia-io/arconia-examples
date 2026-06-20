@@ -18,3 +18,7 @@ arconia:
       opentelemetry:
         ai:
           flavor: openlit
+  dev:
+    services:
+      openlit:
+        image-name: ghcr.io/openlit/openlit:1.21.1

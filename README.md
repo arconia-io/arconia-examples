@@ -21,8 +21,8 @@ A collection of examples and sample applications showcasing the features of
 - [Spring Data MongoDB](arconia-dev-services/spring-data-mongodb)
 - [Spring Data MongoDB Atlas](arconia-dev-services/spring-data-mongodb-atlas)
 - [Spring Data Redis](arconia-dev-services/spring-data-redis)
+- [Spring Pulsar](arconia-dev-services/spring-pulsar)
 - [Spring RabbitMQ](arconia-dev-services/spring-rabbitmq)
-- [Spring Pulsar](arconia-dev-services/spring-apache-pulsar)
 
 ## 🦆&nbsp; Docling
 

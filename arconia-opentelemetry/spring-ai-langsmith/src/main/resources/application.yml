@@ -7,11 +7,9 @@ spring:
       init:
         pull-model-strategy: when-missing
       chat:
-        options:
-          model: "ministral-3:8b"
+        model: "ministral-3:8b"
       embedding:
-        options:
-          model: "granite-embedding:30m"
+        model: "granite-embedding:30m"
 
 arconia:
   observations:

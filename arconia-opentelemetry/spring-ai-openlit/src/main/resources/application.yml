@@ -9,8 +9,7 @@ spring:
       chat:
         model: "ministral-3:8b"
       embedding:
-        options:
-          model: "granite-embedding:30m"
+        model: "granite-embedding:30m"
 
 arconia:
   observations:

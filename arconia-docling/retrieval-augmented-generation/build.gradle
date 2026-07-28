@@ -22,6 +22,7 @@ repositories {
 
 dependencies {
 	implementation 'io.arconia:arconia-ai-docling-document-reader'
+	implementation 'io.arconia:arconia-opentelemetry-spring-boot-starter'
 
 	implementation 'org.springframework.ai:spring-ai-starter-model-ollama'
 	implementation 'org.springframework.ai:spring-ai-starter-vector-store-pgvector'
@@ -31,6 +32,7 @@ dependencies {
 
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testAndDevelopmentOnly 'io.arconia:arconia-dev-services-docling'
+	testAndDevelopmentOnly 'io.arconia:arconia-dev-services-lgtm'
 	testAndDevelopmentOnly 'io.arconia:arconia-dev-services-ollama'
 	testAndDevelopmentOnly 'io.arconia:arconia-dev-services-postgresql'
 

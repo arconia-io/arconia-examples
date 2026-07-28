@@ -40,7 +40,7 @@ tasks.named('test') {
 
 dependencyManagement {
     imports {
-        mavenBom "io.arconia:arconia-bom:0.29.0-SNAPSHOT"
+        mavenBom "io.arconia:arconia-bom:0.29.0"
     }
 }
 

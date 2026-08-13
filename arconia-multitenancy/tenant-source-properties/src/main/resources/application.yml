@@ -5,7 +5,8 @@ spring:
 arconia:
   multitenancy:
     details:
-      source: properties
+      # Removed. Tenant details are auto-configured from the arconia.multitenancy.details.tenants list or from a tenant details dependency.
+      # source: properties
       tenants:
         - identifier: dukes
         - identifier: beans

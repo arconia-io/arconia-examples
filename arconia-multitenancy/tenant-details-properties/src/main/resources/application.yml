@@ -1,6 +1,12 @@
 spring:
   application:
-    name: tenant-source-properties
+    name: tenant-details-properties
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 arconia:
   multitenancy:

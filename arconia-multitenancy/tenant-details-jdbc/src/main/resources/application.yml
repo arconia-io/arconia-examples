@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: tenant-details-properties
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
+
+arconia:
+  multitenancy:
+    details:
+      jdbc:
+        initialize-schema: always

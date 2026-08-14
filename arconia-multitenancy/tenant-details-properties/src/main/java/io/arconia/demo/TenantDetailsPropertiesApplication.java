@@ -9,10 +9,10 @@ import org.springframework.web.servlet.function.RouterFunctions;
 import org.springframework.web.servlet.function.ServerResponse;
 
 @SpringBootApplication
-public class TenantSourcePropertiesApplication {
+public class TenantDetailsPropertiesApplication {
 
 	static void main(String[] args) {
-		SpringApplication.run(TenantSourcePropertiesApplication.class, args);
+		SpringApplication.run(TenantDetailsPropertiesApplication.class, args);
 	}
 
 	@Bean

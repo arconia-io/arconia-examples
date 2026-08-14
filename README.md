@@ -31,7 +31,8 @@ A collection of examples and sample applications showcasing the features of
 
 ## 🏢&nbsp; Multitenancy
 
-- [Tenant Source Properties](arconia-multitenancy/tenant-source-properties)
+- [Tenant Details Properties](arconia-multitenancy/tenant-details-properties)
+- [Tenant Details JDBC](arconia-multitenancy/tenant-details-jdbc)
 - [Web HTTP Server](arconia-multitenancy/web-http-server)
 
 ## 🔭&nbsp; Observability

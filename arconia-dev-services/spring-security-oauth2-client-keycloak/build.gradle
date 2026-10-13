@@ -1,0 +1,53 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '4.1.1'
+	id 'io.spring.dependency-management' version '1.1.7'
+	id 'org.graalvm.buildtools.native' version '1.1.14'
+}
+
+group = 'io.arconia'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(25)
+	}
+}
+
+repositories {
+	mavenCentral()
+	mavenLocal()
+}
+
+dependencies {
+	implementation "io.arconia:arconia-spring-boot-starter"
+	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
+	implementation 'org.springframework.boot:spring-boot-starter-security-oauth2-client'
+
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testAndDevelopmentOnly 'io.arconia:arconia-dev-services-keycloak'
+
+	testImplementation "org.springframework.boot:spring-boot-starter-security-oauth2-client-test"
+    testImplementation "org.springframework.boot:spring-boot-starter-webmvc-test"
+	testImplementation "org.springframework.boot:spring-boot-starter-security-test"
+	testImplementation "org.springframework.boot:spring-boot-webtestclient"
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "io.arconia:arconia-bom:0.31.0-SNAPSHOT"
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	options.compilerArgs.add("-parameters")
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+tasks.named('bootBuildImage') {
+	builder = "paketobuildpacks/builder-noble-java-tiny"
+}

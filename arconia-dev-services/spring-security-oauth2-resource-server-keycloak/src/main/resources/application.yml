@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: spring-security-oauth2-resource-server-keycloak
+
+server:
+  port: 8081

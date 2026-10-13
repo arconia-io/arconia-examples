@@ -20,7 +20,9 @@ jobs:
       fail-fast: false
       matrix:
         project: [
+          arconia-dev-services/spring-cloud-aws-floci,
           arconia-dev-services/spring-data-jdbc-postgresql,
+          arconia-dev-services/spring-data-jdbc-postgresql-volume,
           arconia-dev-services/spring-data-jpa-mariadb,
           arconia-dev-services/spring-data-jpa-mysql,
           arconia-dev-services/spring-data-jpa-oracle,
@@ -31,6 +33,8 @@ jobs:
           arconia-dev-services/spring-data-redis,
           arconia-dev-services/spring-pulsar,
           arconia-dev-services/spring-rabbitmq,
+          arconia-dev-services/spring-security-oauth2-client-keycloak,
+          arconia-dev-services/spring-security-oauth2-resource-server-keycloak,
           arconia-docling/document-processing,
           arconia-docling/retrieval-augmented-generation,
           arconia-multitenancy/tenant-details-jdbc,
@@ -39,7 +43,8 @@ jobs:
           arconia-openinference,
           arconia-opentelemetry/logging-log4j2,
           arconia-opentelemetry/observability-signals,
-          arconia-opentelemetry/spring-ai-langsmith
+          arconia-opentelemetry/spring-ai-langsmith,
+          arconia-opentelemetry/spring-ai-openlit
         ]
     steps:
       - name: Check out source code

@@ -6,7 +6,7 @@ arconia:
   dev:
     services:
       floci:
-        image-name: floci/floci:1.5.19-compat
+        image-name: floci/floci:2.2.0-compat
         resources:
           - source-path: classpath:floci/init.sh
             container-path: /etc/floci/init/ready.d/init.sh

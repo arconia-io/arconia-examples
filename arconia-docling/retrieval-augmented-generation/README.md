@@ -13,16 +13,8 @@ The application consumes models from an [Ollama](https://ollama.ai) inference se
 
 ## Running the application
 
-If you're using the native Ollama application, run the application as follows:
-
 ```shell
 ./gradlew bootRun
-```
-
-If instead you want to rely on the Ollama Dev Service via Testcontainers, run the application as follows.
-
-```shell
-./gradlew bootRun -Darconia.dev.services.ollama.enabled=true
 ```
 
 Alternatively, you can use the [Arconia CLI](https://arconia.io/docs/arconia-cli/latest/):
@@ -31,7 +23,7 @@ Alternatively, you can use the [Arconia CLI](https://arconia.io/docs/arconia-cli
 arconia dev
 ```
 
-Under the hood, the Arconia framework will automatically spin up a [Docling](https://arconia.io/docs/arconia/latest/dev-services/docling/) server and a [PostgreSQL](https://arconia.io/docs/arconia/latest/dev-services/postgresql/) database using Testcontainers (see [Arconia Dev Services](https://arconia.io/docs/arconia/latest/dev-services/) for more information).
+Under the hood, the Arconia framework will automatically spin up a [Docling](https://arconia.io/docs/arconia/latest/dev-services/docling/) server, a [Grafana LGTM](https://arconia.io/docs/arconia/latest/dev-services/lgtm/) observability platform, and a [PostgreSQL](https://arconia.io/docs/arconia/latest/dev-services/postgresql/) database using Testcontainers (see [Arconia Dev Services](https://arconia.io/docs/arconia/latest/dev-services/) for more information).
 
 The application will be accessible at http://localhost:8080.
 

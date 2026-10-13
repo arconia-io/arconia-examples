@@ -23,6 +23,8 @@ A collection of examples and sample applications showcasing the features of
 - [Spring Data Redis](arconia-dev-services/spring-data-redis)
 - [Spring Pulsar](arconia-dev-services/spring-pulsar)
 - [Spring RabbitMQ](arconia-dev-services/spring-rabbitmq)
+- [Spring Security OAuth2 Client with Keycloak](arconia-dev-services/spring-security-oauth2-client-keycloak)
+- [Spring Security OAuth2 Resource Server with Keycloak](arconia-dev-services/spring-security-oauth2-resource-server-keycloak)
 
 ## 🦆&nbsp; Docling
 

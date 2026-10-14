@@ -4,19 +4,19 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
-import org.springframework.boot.webtestclient.autoconfigure.AutoConfigureWebTestClient;
+import org.springframework.boot.resttestclient.autoconfigure.AutoConfigureRestTestClient;
 import org.springframework.security.oauth2.client.registration.ClientRegistration;
 import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
-import org.springframework.test.web.reactive.server.WebTestClient;
+import org.springframework.test.web.servlet.client.RestTestClient;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@AutoConfigureWebTestClient
+@AutoConfigureRestTestClient
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 class ApplicationTests {
 
 	@Autowired
-	private WebTestClient webTestClient;
+	private RestTestClient restTestClient;
 
 	@Autowired
 	private ClientRegistrationRepository clientRegistrations;
@@ -33,7 +33,7 @@ class ApplicationTests {
 
 	@Test
 	void unauthenticatedRequestRedirectsToKeycloak() {
-		webTestClient
+		restTestClient
 			.get()
 			.uri("/")
 			.exchange()
@@ -44,7 +44,7 @@ class ApplicationTests {
 
 	@Test
 	void issuerEndpointIsPublic() {
-		webTestClient
+		restTestClient
 			.get()
 			.uri("/issuer")
 			.exchange()

@@ -34,7 +34,6 @@ dependencies {
     testImplementation "org.springframework.boot:spring-boot-starter-security-oauth2-resource-server-test"
     testImplementation "org.springframework.boot:spring-boot-starter-webmvc-test"
 	testImplementation "org.springframework.boot:spring-boot-starter-security-test"
-	testImplementation "org.springframework.boot:spring-boot-webtestclient"
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 

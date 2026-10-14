@@ -6,22 +6,22 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
-import org.springframework.boot.webtestclient.autoconfigure.AutoConfigureWebTestClient;
+import org.springframework.boot.resttestclient.autoconfigure.AutoConfigureRestTestClient;
 import org.springframework.core.env.Environment;
 import org.springframework.http.MediaType;
-import org.springframework.test.web.reactive.server.WebTestClient;
+import org.springframework.test.web.servlet.client.RestTestClient;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestClient;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@AutoConfigureWebTestClient
+@AutoConfigureRestTestClient
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 class ApplicationTests {
 
 	@Autowired
-	private WebTestClient webTestClient;
+	private RestTestClient restTestClient;
 
 	@Autowired
 	private Environment environment;
@@ -37,7 +37,7 @@ class ApplicationTests {
 
 	@Test
 	void requestWithoutTokenIsRejected() {
-		webTestClient
+		restTestClient
 			.get()
 			.uri("/messages")
 			.exchange()
@@ -48,7 +48,7 @@ class ApplicationTests {
 	void requestWithTokenIsAccepted() {
 		String accessToken = requestAccessToken("isabella", "isabella");
 
-		webTestClient
+		restTestClient
 			.get()
 			.uri("/messages")
 			.headers(headers -> headers.setBearerAuth(accessToken))

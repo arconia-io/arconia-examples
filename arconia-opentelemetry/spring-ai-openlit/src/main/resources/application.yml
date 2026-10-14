@@ -7,9 +7,9 @@ spring:
       init:
         pull-model-strategy: when-missing
       chat:
-        model: "ministral-3:8b"
+        model: qwen3.5:4b
       embedding:
-        model: "granite-embedding:30m"
+        model: granite-embedding:30m
 
 arconia:
   observations:
@@ -17,7 +17,3 @@ arconia:
       opentelemetry:
         ai:
           flavor: openlit
-  dev:
-    services:
-      openlit:
-        image-name: ghcr.io/openlit/openlit:1.21.1

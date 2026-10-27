@@ -44,6 +44,7 @@ A collection of examples and sample applications showcasing the features of
 - [Spring AI and LangSmith](arconia-opentelemetry/spring-ai-langsmith)
 - [Spring AI and OpenInference](arconia-openinference)
 - [Spring AI and OpenLit](arconia-opentelemetry/spring-ai-openlit)
+- [Spring AI and Traceloop](arconia-opentelemetry/spring-ai-traceloop)
 
 ## 🛡️&nbsp; Security
 

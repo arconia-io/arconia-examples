@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: spring-ai-traceloop
+
+  ai:
+    ollama:
+      init:
+        pull-model-strategy: when-missing
+      chat:
+        model: "qwen3.5:4b"
+      embedding:
+        model: "granite-embedding:30m"
+
+arconia:
+  observations:
+    conventions:
+      opentelemetry:
+        ai:
+          flavor: openllmetry
+  otel:
+    exporter:
+      otlp:
+        endpoint: "https://api.traceloop.com"
+        headers:
+          "Authorization": "Bearer ${TRACELOOP_API_KEY}"
+    logs:
+      enabled: false
+    metrics:
+      enabled: false

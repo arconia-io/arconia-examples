@@ -2,9 +2,9 @@ version: 2
 updates:
   - package-ecosystem: gradle
     directories:
-      - "/arconia-docling/document-processing"
-      - "/arconia-docling/retrieval-augmented-generation"
+      - "/arconia-dev-services/spring-cloud-aws-floci"
       - "/arconia-dev-services/spring-data-jdbc-postgresql"
+      - "/arconia-dev-services/spring-data-jdbc-postgresql-volume"
       - "/arconia-dev-services/spring-data-jpa-mariadb"
       - "/arconia-dev-services/spring-data-jpa-mysql"
       - "/arconia-dev-services/spring-data-jpa-oracle"
@@ -13,12 +13,21 @@ updates:
       - "/arconia-dev-services/spring-data-mongodb"
       - "/arconia-dev-services/spring-data-mongodb-atlas"
       - "/arconia-dev-services/spring-data-redis"
+      - "/arconia-dev-services/spring-pulsar"
       - "/arconia-dev-services/spring-rabbitmq"
-      - "/arconia-multitenancy/tenant-source-properties"
+      - "/arconia-dev-services/spring-security-oauth2-client-keycloak"
+      - "/arconia-dev-services/spring-security-oauth2-resource-server-keycloak"
+      - "/arconia-docling/document-processing"
+      - "/arconia-docling/retrieval-augmented-generation"
+      - "/arconia-multitenancy/tenant-details-jdbc"
+      - "/arconia-multitenancy/tenant-details-properties"
       - "/arconia-multitenancy/web-http-server"
       - "/arconia-openinference"
       - "/arconia-opentelemetry/logging-log4j2"
       - "/arconia-opentelemetry/observability-signals"
+      - "/arconia-opentelemetry/spring-ai-langsmith"
+      - "/arconia-opentelemetry/spring-ai-openlit"
+      - "/arconia-opentelemetry/spring-ai-traceloop"
     schedule:
       interval: daily
       time: "23:00"
@@ -28,6 +37,11 @@ updates:
       - "dependencies"
     commit-message:
       prefix: "deps:"
+    groups:
+      gradle:
+        group-by: dependency-name
+        patterns:
+          - "*"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -39,3 +53,7 @@ updates:
       - "dependencies"
     commit-message:
       prefix: "deps:"
+    groups:
+      github-actions:
+        patterns:
+          - "*"

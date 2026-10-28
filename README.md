@@ -41,6 +41,7 @@ A collection of examples and sample applications showcasing the features of
 
 - [OpenTelemetry Logging Log4j2](arconia-opentelemetry/logging-log4j2)
 - [OpenTelemetry Observability Signals](arconia-opentelemetry/observability-signals)
+- [Spring AI and Langfuse](arconia-opentelemetry/spring-ai-langfuse)
 - [Spring AI and LangSmith](arconia-opentelemetry/spring-ai-langsmith)
 - [Spring AI and OpenInference](arconia-openinference)
 - [Spring AI and OpenLit](arconia-opentelemetry/spring-ai-openlit)

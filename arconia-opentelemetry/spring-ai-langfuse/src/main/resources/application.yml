@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: spring-ai-langfuse
+
+  ai:
+    ollama:
+      init:
+        pull-model-strategy: when-missing
+      chat:
+        model: qwen3.5:4b
+      embedding:
+        model: granite-embedding:30m
+
+arconia:
+  observations:
+    conventions:
+      opentelemetry:
+        ai:
+          flavor: langfuse

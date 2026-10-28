@@ -1,0 +1,57 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '4.1.2'
+	id 'io.spring.dependency-management' version '1.1.7'
+	id 'org.graalvm.buildtools.native' version '1.1.17'
+}
+
+group = 'io.arconia'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(25)
+	}
+}
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+	// maven {
+	// 	url = uri("https://central.sonatype.com/repository/maven-snapshots/")
+	// }
+}
+
+dependencies {
+	implementation 'io.arconia:arconia-opentelemetry-ai-semantic-conventions'
+	implementation 'io.arconia:arconia-opentelemetry-spring-boot-starter'
+
+	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
+    implementation 'org.springframework.ai:spring-ai-starter-model-ollama'
+
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testAndDevelopmentOnly 'io.arconia:arconia-dev-services-langfuse'
+	testAndDevelopmentOnly 'io.arconia:arconia-dev-services-ollama'
+
+	testImplementation "org.springframework.boot:spring-boot-starter-webmvc-test"
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "io.arconia:arconia-bom:0.32.0-SNAPSHOT"
+        mavenBom "org.springframework.ai:spring-ai-bom:2.0.2"
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs.add("-parameters")
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+tasks.named('bootBuildImage') {
+	builder = "paketobuildpacks/builder-noble-java-tiny"
+}

@@ -25,6 +25,7 @@ updates:
       - "/arconia-openinference"
       - "/arconia-opentelemetry/logging-log4j2"
       - "/arconia-opentelemetry/observability-signals"
+      - "/arconia-opentelemetry/spring-ai-langfuse"
       - "/arconia-opentelemetry/spring-ai-langsmith"
       - "/arconia-opentelemetry/spring-ai-openlit"
       - "/arconia-opentelemetry/spring-ai-traceloop"

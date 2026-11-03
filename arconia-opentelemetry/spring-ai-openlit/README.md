@@ -34,7 +34,7 @@ The application will be accessible at http://localhost:8080.
 The application logs will show you the URL where you can access the OpenLit AI observability platform.
 
 ```logs
-...OpenLit UI: http://localhost:<port>
+...Dev Service 'openlit' links: OpenLIT UI: http://localhost:<port>
 ```
 
 By default, traces are exported via OTLP using the HTTP/Protobuf format.

@@ -6,6 +6,6 @@ spring:
       init:
         pull-model-strategy: when_missing
       chat:
-        model: ministral-3:8b
+        model: qwen3.5:4b
       embedding:
         model: granite-embedding:30m

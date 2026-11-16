@@ -22,8 +22,9 @@ repositories {
 }
 
 dependencies {
-	implementation 'io.arconia:arconia-opentelemetry-ai-semantic-conventions'
 	implementation 'io.arconia:arconia-opentelemetry-spring-boot-starter'
+	implementation 'io.arconia:arconia-opentelemetry-semantic-conventions'
+	implementation 'io.arconia:arconia-opentelemetry-ai-semantic-conventions'
 
 	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
     implementation 'org.springframework.ai:spring-ai-starter-model-ollama'
